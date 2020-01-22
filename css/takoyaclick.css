@@ -1,0 +1,41 @@
+/* compteur +1 sur le takoyaki*/
+
+.on{
+	opacity:1;
+	top:100px;
+	position: absolute;
+	color:red;
+	z-index:1;
+}
+
+.off{
+	position: absolute;
+	z-index:1;
+	opacity:0;
+	transition: all 4s ease;
+	top:10px;
+}
+
+/* mise en page du haut de la page*/
+
+body{
+	margin:0;
+	padding:0;
+	position:relative;
+}
+
+#haut{
+	width:100%;
+	display:flex;
+	justify-content: space-between;
+}
+
+#jeu{
+	display:flex;
+}
+
+/* mise en page du gauche de la page*/
+
+#gauche{
+	width:50%;
+}
