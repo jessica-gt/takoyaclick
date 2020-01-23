@@ -8,11 +8,27 @@
 
 /* compteur +1 sur le takoyaki*/
 
-.on{
+.on1{
 	opacity:1;
 	top:500px;
 	position: absolute;
-	color:red;
+	color:white;
+	z-index:1;
+}
+
+.on2{
+	opacity:1;
+	top:400px;
+	position: absolute;
+	color:white;
+	z-index:1;
+}
+
+.on3{
+	opacity:1;
+	top:300px;
+	position: absolute;
+	color:white;
 	z-index:1;
 }
 
@@ -26,26 +42,92 @@
 
 #plusScore1{
 	left:17%;
+	pointer-events: none;
 }
 
 #plusScore2{
 	left:20%;
+	pointer-events: none;
 }
 
 #plusScore3{
 	left:23%;
+	pointer-events: none;
 }
 
 #plusScore4{
 	left:26%;
+	pointer-events: none;
 }
 
 #plusScore5{
 	left:29%;
+	pointer-events: none;
 }
 
 #plusScore6{
+	pointer-events: none;
 	left:31%;
+}
+
+#plusScore7{
+	pointer-events: none;
+	left:17%;
+}
+
+#plusScore8{
+	pointer-events: none;
+	left:20%;
+}
+
+#plusScore9{
+	pointer-events: none;
+	left:23%;
+}
+
+#plusScore10{
+	left:26%;
+	pointer-events: none;
+}
+
+#plusScore11{
+	pointer-events: none;
+	left:29%;
+}
+
+#plusScore12{
+	pointer-events: none;
+	left:31%;
+}
+
+#plusScore13{
+	left:17%;
+	pointer-events: none;
+}
+
+#plusScore14{
+	left:20%;
+	pointer-events: none;
+}
+
+#plusScore15{
+	pointer-events: none;
+	left:23%;
+}
+
+#plusScore16{
+	left:26%;
+	pointer-events: none;
+}
+
+#plusScore17{
+	left:29%;
+	pointer-events: none;
+}
+
+#plusScore18{
+	left:31%;
+	pointer-events: none;
 }
 
 /* mise en page du haut de la page*/
@@ -360,6 +442,47 @@ span{
 		outline:none;
 		border:none;
 	}
+
+	/*infobulle*/
+
+	/*INFO PATE*/
+
+	#infoPate:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+
+	/* INFO POUPLE*/
+
+		
+	#infoPoulpe:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+		
 }
 
 /* si petit ecran*/
@@ -380,7 +503,7 @@ span{
 		justify-content: space-around;
 		align-items: center;
 		border-radius: 20px 0 0 20px;
-		overflow:scroll;
+		overflow: auto;
 	}
 
 	#bentoGauche, #bentoCentre, #bentoDroite{
@@ -496,4 +619,173 @@ span{
 		outline:none;
 		border:none;
 	}
+
+	/*takoyaki +1*/
+	#plusScore1{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore2{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore3{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore4{
+		left:35%;
+		pointer-events: none;
+	}
+
+	#plusScore5{
+		left:40%;
+		pointer-events: none;
+	}
+
+	#plusScore6{
+		left:45%;
+		pointer-events: none;
+	}
+
+	#plusScore7{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore8{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore9{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore10{
+		left:35%;
+		pointer-events: none;
+	}
+
+	#plusScore11{
+		pointer-events: none;
+		left:40%;
+	}
+
+	#plusScore12{
+		left:45%;
+		pointer-events: none;
+	}
+
+	#plusScore13{
+		left:20%;
+		pointer-events: none;
+	}
+
+	#plusScore14{
+		left:25%;
+		pointer-events: none;
+	}
+
+	#plusScore15{
+		left:30%;
+		pointer-events: none;
+	}
+
+	#plusScore16{
+		pointer-events: none;
+		left:35%;
+	}
+
+	#plusScore17{
+		left:40%;
+		pointer-events: none;
+	}
+
+	#plusScore18{
+		left:45%;
+		pointer-events: none;
+	}
+
+	/*infobulle*/
+	
+	/*INFO PATE*/
+
+	#infoPate:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/* INFO POUPLE*/
+
+
+	#infoPoulpe:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+}
+
+/*infobulle*/
+
+/*INFO PATE*/
+
+#infoPate { 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoPate:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoPate span  {
+	display: none;
+}
+
+/*INFO POUPLE*/
+
+#infoPoulpe { 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoPoulpe:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoPoulpe span  {
+	display: none;
 }
