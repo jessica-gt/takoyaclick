@@ -45,8 +45,12 @@ body{
 	justify-content: space-between;
 	align-items:center;
 	color:#320F04;
-	font-size:30px;
+	font-size:50px;
 	font-weight: normal;
+}
+
+h1{
+	margin:0;
 }
 
 #haut button img{
@@ -82,9 +86,8 @@ body{
 	width:60%;
 	padding:0;
 	border:none;
-	background:#320F04;
-	outline:none;	
-	border-radius: 100%;
+	background:none;
+	outline:none;
 }
 
 #gauche button img{
@@ -98,301 +101,314 @@ body{
 }
 
 #soja{
-	width:90px;
-	height:90px;
+	width:150px;
+	height:150px;
 	background-color: #923434;
 	border:solid #320F04 5px; 
 	border-radius: 100px;
-	text-align:center;
 	color:white;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #wasabi{
-	margin-top:50px;
-	width:70px;
-	height:70px;
+	margin-top:90px;
+	width:120px;
+	height:120px;
 	background-color: #9B8C08;
 	border:solid #320F04 5px; 
 	border-radius: 100px;
-	text-align:center;
 	color:#320F04;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* mise en page de la partie droite */
-
-#droite{
-	width:50%;
+span{
+	font-family: 'Permanent Marker', cursive;
 }
 
-#bento{
-	display:flex;
-	background-color: #320F04;
-	border-radius: 5%;
-	width:95%;
-	height:60%;
+#bento p{
+	color:#320F04;
 }
 
-#bentoGauche, #bentoCentre, #bentoDroite{
-	width:35%;
-	margin:5px;
-	display:flex;
-	flex-direction: column;
-	justify-content: space-between;
+/* Si grand écran */
+@media screen and (min-width: 1500px){
+	
+	#droite{
+		width:50%;
+	}
+
+	#bento{
+		background-color: #320F04;
+		width:95%;
+		height:700px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		border-radius:10%;
+	}
+
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		width:30%;
+		height:95%;
+	}
+
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	/* div des 3 bentos */
+
+	#pate, #poulpe, #sauce, #katsuo {
+		width:100%;
+		height:24%;
+		display:flex;
+		background-color: #C40A0A;
+	}
+
+	#pate{
+		border-radius: 10% 10% 0 0;
+		border-left: solid #320F04 10px;
+		border-top: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+	}
+
+	#poulpe, #sauce{
+		border-left: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+		border-top: solid #320F04 5px;
+	}
+
+	#katsuo{
+		border-radius:0 0 10% 10%;
+		border-top: solid #320F04 5px;
+		border-left: solid #320F04 10px;
+		border-bottom: solid #320F04 10px;
+	}
+
+	#brochette{
+		border-radius:10% 10% 0 0;
+		border-top: solid #320F04 10px;
+	}
+
+	#kukku{
+		border-radius:0 0 10% 10%;
+		border-bottom: solid #320F04 10px;
+	}
+
+	#livreur{
+		border-radius:10% 10% 0 0;
+		border-top: solid #320F04 10px;
+		border-bottom: solid #320F04 5px;
+	}
+
+	#restau1{
+		border-radius:0 0 0 10%;
+		border-bottom: solid #320F04 20px;
+		border-top: solid #320F04 5px;
+	}
+
+	#restau2{
+		border-radius:0 0 30% 0;
+		border-bottom: solid #320F04 20px;
+		border-top: solid #320F04 5px;
+		border-right: solid #320F04 10px;
+	}
+
+	#brochette, #bonusBento, #kukku{
+		width:100%;
+		height:34%;
+		display:flex;
+		flex-direction: column;
+		background-color: #C40A0A;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#livreur{
+		width:95%;
+		height:48%;
+		display:flex;
+		flex-direction: column;
+		background-color: #C40A0A;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#isakaya{
+		width:100%;
+		height:48%;
+		display:flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#restau1, #restau2{
+		width:48%;
+		height:100%;
+		background-color: #C40A0A;
+	}
+
+	/* bouton */
+
+	#pate .bouton, #poulpe .bouton, #sauce .bouton, #katsuo .bouton {
+		width:25%;
+		display:flex;
+	}
+
+	#brochette .bouton, #bonusBento .bouton, #kukku .bouton{
+		height:25%;
+		display:flex;
+	}
+
+	#restau1, #restau2{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#livreur .bouton{
+		height:50%;
+		display:flex;
+	}
+
+	#restau1 .bouton{
+		width:100%;
+		display:flex;
+	}
+
+	#restau2 .bouton{
+		width:80%;
+		display:flex;
+	}
+
+	.bouton button{
+		background:none;
+		border:none;
+		outline:none;
+	}
+
+	#pate .bouton img, #poulpe .bouton img, #sauce .bouton img, #katsuo .bouton img, #restau1 .bouton img, #restau2 .bouton img{
+		width:100%;
+	}
+
+	#brochette .bouton img, #bonusBento .bouton img, #kukku .bouton img, #livreur .bouton img{
+		height:100%;
+	}
+
+	/* div prix */
+
+	.prix{
+		width:75%;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.prix p {
+		display:flex;
+		align-items: center;
+	}
+
+	.prix img{
+		width:25px;
+		height:25px;
+	}
+
+	.prix button{
+		margin-left:60%;
+		color:white;
+		background: none;
+		outline:none;
+		border:none;
+	}
 }
 
-#pate, #poulpe, #sauce, #katsuo, #brochette, #bonusBento, #kukku{
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #C40A0A;
-}
+/* si petit ecran*/
+@media screen and (max-width: 1500px){
+	#droite{
+		width:25%;
+	}
 
-#pate, #poulpe, #sauce, #katsuo{
-	border: solid #320F04 5px;
-	height:22%;
-}
+	#gauche{
+		width:75%;
+	}
 
-#pate, #brochette{
-	border-radius: 10% 10% 0 0;
-}
+	#bento{
+		background-color: #320F04;
+		height:2000px;
+		display:flex;
+		flex-direction:column;
+		justify-content: space-around;
+		align-items: center;
+	}
 
-#katsuo, #kukku{
-	border-radius:0 0 10% 10%;
-}
+	#bentoGauche, #bentoCentre, #bentoDroite{
+		width:90%;
+		height:30%;
+		display:flex;
+		flex-direction:column;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-#brochette{
-	border-top: solid #320F04 5px;
-	border-left: solid #320F04 5px;
-	border-right: solid #320F04 5px;
-	height:40%;
-}
+	#pate, #poulpe, #sauce, #katsuo, #brochette, #bonusBento, #kukku{
+		width:100%;
+		height:23%;
+		background-color: #C40A0A;
+		display:flex;
+		justify-content: space-between;
+	}
 
-#kukku{
-	border-bottom: solid #320F04 5px;
-	border-left: solid #320F04 5px;
-	border-right: solid #320F04 5px;
-	height:40%;
-}
+	/*bouton*/
 
-#bonusBento{
-	border-left: solid #320F04 5px;
-	border-right: solid #320F04 5px;
-}
+	.bouton{
+		width:25%;
+		display: flex;
+	}
 
-#pate button, #poulpe button, #sauce button, #katsuo button, #brochette button, #bonusBento button{
-	width:25%;
-	padding:0;
-	background:none;
-	border:none;
-	outline:none;
-}
+	.bouton img{
+		width:100%;
+	}
 
-#kukku button{
-	width:45%;
-	padding:0;
-	background:none;
-	border:none;
-	outline:none;
-}
+	.bouton button{
+		background:none;
+		border:none;
+		outline:none;
+	}
 
-#pate img, #poulpe img, #sauce img, #katsuo img, #brochette img, #bonusBento img{
-	width:100%;
-}
+	/*prix*/
 
-#kukku img{
-	width:100%;
-}
+	.prix{
+		width:75%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-.prix{
-	text-align: center;
-	width:70%;
-}
+	.prix p {
+		display:flex;
+		align-items: center;
+		margin:0;
+	}
 
-.prix button{
-	color:white;
-	margin-left:60%;
-}
+	.prix img{
+		width:25px;
+		height:25px;
+	}
 
-.prix div{
-	display:flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.prix div div{
-	width:20px;
-	height:20px;
-}
-
-#livreur{
-	background-color: #C40A0A;
-	border-top: solid #320F04 5px;
-	border-left: solid #320F04 5px;
-	border-right: solid #320F04 5px;
-	border-radius: 10% 10% 0 0;
-	height:48%;
-}
-
-#livreur div{
-	height:50%;
-	display:flex;
-	justify-content: space-around;
-	align-items:center;
-}
-
-#ligne1 button{
-	height:100%;
-	background: none;
-	border:none;
-	outline:none;
-}
-
-#ligne1 button img{
-	height:100%;
-}
-
-#ligne2 div div{
-	width:20px;
-	height:20px;
-}
-
-#ligne2 div div img{
-	width:100%;
-	height:100%;
-}
-
-#ligne2{
-	display:flex;
-	flex-direction: column;
-}
-
-#ligne2 button{
-	color:white;
-	margin-left:70%;
-	background:none;
-	border:none;
-	outline:none;
-}
-
-#isakaya{
-	background-color: #C40A0A;
-	border-bottom: solid #320F04 5px;
-	border-left: solid #320F04 5px;
-	border-right: solid #320F04 5px;
-	border-radius:0 0 10% 10%;
-	height:48%;
-	display:flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-#restau1, #restau2{
-	height:49%;
-}
-
-#restau1 div button{
-	width:50%;
-	background:none;
-	outline:none;
-	border:none;
-}
-
-#restau1 div button img{
-	width:100%;
-}
-
-#restau1{
-	display:flex;
-	justify-content: center;
-}
-
-#restau1 div{
-	width:50%;
-}
-
-#restau2{
-	text-align: right;
-	width:100%;
-	display:flex;
-	flex-direction: row-reverse;
-	align-items: flex-end;
-}
-
-hr{
-	transform: rotate(135deg);
-	height:5px;
-	width:150%;
-	margin:0;
-	background:#320F04;
-	border:none;
-}
-
-#infoIsakaya{
-	color:white;
-}
-
-#restau1 div div{
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	height:50%;
-}
-
-#restau1 div div div{
-	width:20px;
-	height:20px;
-}
-
-#restau1 div div div img{
-	width:100%;
-	height:100%;
-}
-
-#colone2{
-	display:flex;
-}
-
-#colone2 button{
-	height:30%;
-}
-
-#titre{
-	transform: rotate(-45deg);
-	margin:0;
-}
-
-#image{
-	padding:0;
-	width:100px;
-	background:none;
-	outline: none;
-	border:none;
-}
-
-#restau2 div button img{
-	width:100%;
-}
-
-#restau2 div div{
-	width:20px;
-	height:20px;
-}
-
-#restau2 div div img{
-	width:100%;
-	height:100%;
-}
-
-#infoChaine {
-	width:50px;
-	color:white;
-	background:none;
-	border:none;
-	outline: none;
-}
-
-#restau2 div{
-	width:33%;
-	display:flex;
-	align-items: center;
+	.prix button{
+		color:white;
+		background: none;
+		outline:none;
+		border:none;
+	}
 }

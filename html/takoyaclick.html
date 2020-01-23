@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../css/takoyaclick.css">
 		<link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div id='plusScore1' class='off'>+1</div>
@@ -30,11 +31,11 @@
 				<!-- parti gauche avec clickr et compteurs -->
 				<div id='gauche'>
 					<button id='takoyaki'>
-						<img src='../Image/takoyaki' alt='takoyaki'>
+						<img src='../Image/takocontour' alt='takoyaki'>
 					</button>
 					<div id='affichage'>
 						<div id='soja'><p>0/sec</p></div>
-						<div id='wasabi'><p>0</p></div>
+						<div id='wasabi'><br><p>0</p></div>
 					</div>
 
 					<p>*"Kukku" désigne un cuisinier en japonais !</p>
@@ -47,50 +48,50 @@
 
 						<div id='bentoGauche'>
 							<div id='pate'>
-								<button>
-									<img src='../Image/pate' alt='pate'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/pate' alt='pate'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Pâte à beignet</p>
-									<div>
-										<p>50 x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>50 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoPate'>info</button>
 								</div>
 							</div>
 							<div id='poulpe'>
-								<button>
-									<img src='../Image/poulpe' alt='poulpe'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/poulpe' alt='poulpe'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Poulpe</p>
-									<div>
-										<p>100 x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>100 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoPouple'>info</button>
 								</div>
 							</div>
 							<div id='sauce'>
-								<button>
-									<img src='../Image/sauce' alt='sauce'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/sauce' alt='sauce'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Sauce</p>
-									<div>
-										<p>1k x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoSauce'>info</button>
 								</div>
 							</div>
 							<div id='katsuo'>
-								<button>
-									<img src='../Image/bonite' alt='bonite'>		
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/bonite' alt='bonite'>	
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Katsuobushi</p>
-									<div>
-										<p>5k x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>5k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoKatsuo'>info</button>
 								</div>
 							</div>
@@ -98,38 +99,38 @@
 
 						<div id='bentoCentre'>
 							<div id='brochette'>
-								<button>
-									<img src='../Image/brochette' alt='brochette'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/brochette' alt='brochette'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Brochette x3</p>
-									<div>
-										<p>500 x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>500 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoBrochette'>info</button>
 								</div>
 							</div>
 							<div id='bonusBento'>
-								<button>
-									<img src='../Image/bento' alt='bento'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/bento' alt='bento'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Bento</p>
-									<div>
-										<p>1k x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoBento'>info</button>
 								</div>
 							</div>
 							<div id='kukku'>
-								<button>
-									<img src='../Image/kukku.png' alt='cuisinier'>
-								</button>
+								<div class='bouton'>
+									<button>
+										<img src='../Image/kukku' alt='cuisinier'>
+									</button>
+								</div>
 								<div class='prix'>
 									<p>Petits Kukkus</p>
-									<div>
-										<p>10k x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+									<p><span>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoKukku'>info</button>
 								</div>
 							</div>
@@ -137,58 +138,46 @@
 
 						<div id='bentoDroite'>
 							<div id='livreur'>
-
-								<div id='ligne1'>
+								<div class='bouton'>
 									<button>
 										<img src='../Image/livreur' alt='livreur'>
 									</button>
-									<p>Petits livreurs</p>
 								</div>
 
-								<div id=ligne2>
-									<div>
-										<p>100k x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
+								<div class='prix'>
+									<p>Petits livreurs</p>
+									<p><span>100k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoLivreur'>info</button>
 								</div>
-
 							</div>
 							<div id='isakaya'>
 								<div id='restau1'>
-									<div>
+									<div class='bouton'>
 										<button>
 											<img src='../Image/restaurant' alt='restaurant'>
 										</button>
-									
-										<div>
-											<p>1M x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-										</div>
 									</div>
-									<div id='colone2'>
+									<div class='prix'>
 										<p>Isakaya</p>
+										<p><span>1M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 										<button id='infoIsakaya'>info</button>
 									</div>
 								</div>
-								<hr>
-								<p id='titre'>Chaîne d'isakaya</p>
 								<div id='restau2'>
-									<div>
-										<button id='image'>
-											<img src='../Image/restaurant.png' alt='restaurant2'>
+									<div class='bouton'>
+										<button>
+											<img src='../Image/desRestaurant' alt='restaurant2'>
 										</button>
 									</div>
-									<div>
-										<p>6.5M x <div><img src='../Image/takoyaki' alt='takoyaki'></div></p>
-									</div>
-									<div>
-										<button id='infoChaine'>info</button>
+									<div class='prix'>
+										<p>Chaîne d'isakaya</p>
+										<p><span>6.5M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+										<button>info</button>
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
-
 					<p>*"Isakaya" désigne un bistrot au Japon</p>
 				</div>
 			</div>
