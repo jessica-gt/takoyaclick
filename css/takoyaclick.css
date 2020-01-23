@@ -1,3 +1,11 @@
+/* couleur:
+	Marron - #320F04
+	rouge - #C40A0A
+	Soja - #923434
+	Wasabi - #9B8C08
+	info bulle - #D1CB8D
+*/
+
 /* compteur +1 sur le takoyaki*/
 
 .on{
@@ -22,13 +30,39 @@ body{
 	margin:0;
 	padding:0;
 	position:relative;
+	background:url('../Image/background');
+	font-family:'Pangolin';
+
+}
+
+#container{
+	background-color: rgba(255,255,255,0.5);
 }
 
 #haut{
 	width:100%;
 	display:flex;
 	justify-content: space-between;
+	align-items:center;
+	color:#320F04;
+	font-size:30px;
+	font-weight: normal;
 }
+
+#haut button img{
+	width:100%;
+}
+
+#haut button{
+	width:10%;
+	padding:0;
+	height:100%;
+	border:none;
+	background:none;
+	outline:none;
+}
+
+/* mise en page du centre de la page*/
 
 #jeu{
 	display:flex;
@@ -38,4 +72,327 @@ body{
 
 #gauche{
 	width:50%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	color:#320F04;
+}
+
+#gauche button{
+	width:60%;
+	padding:0;
+	border:none;
+	background:#320F04;
+	outline:none;	
+	border-radius: 100%;
+}
+
+#gauche button img{
+	width:100%;
+}
+
+#affichage{
+	width:100%;
+	display:flex;
+	justify-content: space-around;
+}
+
+#soja{
+	width:90px;
+	height:90px;
+	background-color: #923434;
+	border:solid #320F04 5px; 
+	border-radius: 100px;
+	text-align:center;
+	color:white;
+}
+
+#wasabi{
+	margin-top:50px;
+	width:70px;
+	height:70px;
+	background-color: #9B8C08;
+	border:solid #320F04 5px; 
+	border-radius: 100px;
+	text-align:center;
+	color:#320F04;
+}
+
+/* mise en page de la partie droite */
+
+#droite{
+	width:50%;
+}
+
+#bento{
+	display:flex;
+	background-color: #320F04;
+	border-radius: 5%;
+	width:95%;
+	height:60%;
+}
+
+#bentoGauche, #bentoCentre, #bentoDroite{
+	width:35%;
+	margin:5px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#pate, #poulpe, #sauce, #katsuo, #brochette, #bonusBento, #kukku{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #C40A0A;
+}
+
+#pate, #poulpe, #sauce, #katsuo{
+	border: solid #320F04 5px;
+	height:22%;
+}
+
+#pate, #brochette{
+	border-radius: 10% 10% 0 0;
+}
+
+#katsuo, #kukku{
+	border-radius:0 0 10% 10%;
+}
+
+#brochette{
+	border-top: solid #320F04 5px;
+	border-left: solid #320F04 5px;
+	border-right: solid #320F04 5px;
+	height:40%;
+}
+
+#kukku{
+	border-bottom: solid #320F04 5px;
+	border-left: solid #320F04 5px;
+	border-right: solid #320F04 5px;
+	height:40%;
+}
+
+#bonusBento{
+	border-left: solid #320F04 5px;
+	border-right: solid #320F04 5px;
+}
+
+#pate button, #poulpe button, #sauce button, #katsuo button, #brochette button, #bonusBento button{
+	width:25%;
+	padding:0;
+	background:none;
+	border:none;
+	outline:none;
+}
+
+#kukku button{
+	width:45%;
+	padding:0;
+	background:none;
+	border:none;
+	outline:none;
+}
+
+#pate img, #poulpe img, #sauce img, #katsuo img, #brochette img, #bonusBento img{
+	width:100%;
+}
+
+#kukku img{
+	width:100%;
+}
+
+.prix{
+	text-align: center;
+	width:70%;
+}
+
+.prix button{
+	color:white;
+	margin-left:60%;
+}
+
+.prix div{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.prix div div{
+	width:20px;
+	height:20px;
+}
+
+#livreur{
+	background-color: #C40A0A;
+	border-top: solid #320F04 5px;
+	border-left: solid #320F04 5px;
+	border-right: solid #320F04 5px;
+	border-radius: 10% 10% 0 0;
+	height:48%;
+}
+
+#livreur div{
+	height:50%;
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+}
+
+#ligne1 button{
+	height:100%;
+	background: none;
+	border:none;
+	outline:none;
+}
+
+#ligne1 button img{
+	height:100%;
+}
+
+#ligne2 div div{
+	width:20px;
+	height:20px;
+}
+
+#ligne2 div div img{
+	width:100%;
+	height:100%;
+}
+
+#ligne2{
+	display:flex;
+	flex-direction: column;
+}
+
+#ligne2 button{
+	color:white;
+	margin-left:70%;
+	background:none;
+	border:none;
+	outline:none;
+}
+
+#isakaya{
+	background-color: #C40A0A;
+	border-bottom: solid #320F04 5px;
+	border-left: solid #320F04 5px;
+	border-right: solid #320F04 5px;
+	border-radius:0 0 10% 10%;
+	height:48%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#restau1, #restau2{
+	height:49%;
+}
+
+#restau1 div button{
+	width:50%;
+	background:none;
+	outline:none;
+	border:none;
+}
+
+#restau1 div button img{
+	width:100%;
+}
+
+#restau1{
+	display:flex;
+	justify-content: center;
+}
+
+#restau1 div{
+	width:50%;
+}
+
+#restau2{
+	text-align: right;
+	width:100%;
+	display:flex;
+	flex-direction: row-reverse;
+	align-items: flex-end;
+}
+
+hr{
+	transform: rotate(135deg);
+	height:5px;
+	width:150%;
+	margin:0;
+	background:#320F04;
+	border:none;
+}
+
+#infoIsakaya{
+	color:white;
+}
+
+#restau1 div div{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:50%;
+}
+
+#restau1 div div div{
+	width:20px;
+	height:20px;
+}
+
+#restau1 div div div img{
+	width:100%;
+	height:100%;
+}
+
+#colone2{
+	display:flex;
+}
+
+#colone2 button{
+	height:30%;
+}
+
+#titre{
+	transform: rotate(-45deg);
+	margin:0;
+}
+
+#image{
+	padding:0;
+	width:100px;
+	background:none;
+	outline: none;
+	border:none;
+}
+
+#restau2 div button img{
+	width:100%;
+}
+
+#restau2 div div{
+	width:20px;
+	height:20px;
+}
+
+#restau2 div div img{
+	width:100%;
+	height:100%;
+}
+
+#infoChaine {
+	width:50px;
+	color:white;
+	background:none;
+	border:none;
+	outline: none;
+}
+
+#restau2 div{
+	width:33%;
+	display:flex;
+	align-items: center;
 }
