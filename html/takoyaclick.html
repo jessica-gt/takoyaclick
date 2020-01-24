@@ -42,12 +42,12 @@
 
 				<!-- parti gauche avec clickr et compteurs -->
 				<div id='gauche'>
-					<button id='takoyaki'>
-						<img src='../Image/takoyakiCONTOUR.png' alt='takoyaki'>
+					<button id='takoyaki' onclick='buttonClick()'>
+						<img onmouseover='tako1(this)' onmouseout='tako2(this)' src='../Image/takoyakiCONTOUR.png' alt='takoyaki'>
 					</button>
 					<div id='affichage'>
 						<div id='soja'><p>0/sec</p></div>
-						<div id='wasabi'><br><p>0</p></div>
+						<div id='wasabi'><p>0</p></div>
 					</div>
 
 					<p>*"Kukku" désigne un cuisinier en japonais !</p>
@@ -61,58 +61,67 @@
 						<div id='bentoGauche'>
 							<div id='pate'>
 								<div class='bouton'>
-									<button>
-										<img src='../Image/pate' alt='pate'>
+									<button onclick='incrementerPate(this)'>
+										<img onmouseover='pate1(this)' onmouseout='pate2(this)' src='../Image/pate.png' alt='pate'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Pâte à beignet</p>
-									<p><span>50 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanPate'>50 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoPate'>info
 										<span>Rajoute de la pâte à beignet petit Kukku ! <br>
 		 								Chaque pâte à beignet te rajoute 1 clique <br><br><br>
-										 +1 achat / 500</span>
+										 0 / 500</span>
 									</button>
 								</div>
 							</div>
 							<div id='poulpe'>
 								<div class='bouton'>
-									<button>
-										<img src='../Image/poulpe' alt='poulpe'>
+									<button onclick='incrementerPoulpe(this)'>
+										<img onmouseover='poulpe1(this)' onmouseout='poulpe2(this)' src='../Image/poulpe.png' alt='poulpe'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Poulpe</p>
-									<p><span>100 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanPoulpe'>100 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoPoulpe'>info
 										<span>Rajoute du poulpe petit Kukku ! <br>
 		 								Chaque pouple te rajoute 10 cliques <br><br><br>
-		 								+1 achat / 500</span>
+		 								0 / 500</span>
 									</button>
 								</div>
 							</div>
 							<div id='sauce'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/sauce' alt='sauce'>
+										<img onmouseover='sauce1(this)' onmouseout='sauce2(this)' src='../Image/sauce.png' alt='sauce'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Sauce</p>
 									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoSauce'>info</button>
+									<button id='infoSauce'>info
+										<span>Rajoute de la sauce petit Kukku ! <br>
+		 								Chaque sauce te rajoute 100 cliques <br><br><br>
+										 +1 achat / 500</span>
+									</button>
 								</div>
 							</div>
 							<div id='katsuo'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/bonite' alt='bonite'>	
+										<img onmouseover='bonite1(this)' onmouseout='bonite2(this)' src='../Image/bonite.png' alt='bonite'>	
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Katsuobushi</p>
 									<p><span>5k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoKatsuo'>info</button>
+									<button id='infoKatsuo'>info
+										<span>Rajoute du Katsuobushi petit Kukku ! <br>
+		 								Chaque Katsuobushi te rajoute 1000 cliques <br><br><br>
+										 +1 achat / 500
+										</span>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -121,37 +130,52 @@
 							<div id='brochette'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/brochette' alt='brochette'>
+										<img onmouseover='brochette1(this)' onmouseout='brochette2(this)' src='../Image/brochette.png' alt='brochette'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Brochette x3</p>
 									<p><span>500 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoBrochette'>info</button>
+									<button id='infoBrochette'>info
+										<span>Fais des brochettes petit Kukku ! <br>
+										 Chaque brochette clique pour toi X 3 <br><br><br>
+										 +1 achat / 500
+										</span>
+									</button>
 								</div>
 							</div>
 							<div id='bonusBento'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/bento' alt='bento'>
+										<img onmouseover='bento1(this)' onmouseout='bento2(this)' src='../Image/bento.png' alt='bento'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Bento</p>
 									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoBento'>info</button>
+									<button id='infoBento'>info
+										<span>Fais des bentos petit Kukku ! <br>
+										 Chaque bento clique pour toi X 6 <br><br><br>
+										 +1 achat / 500
+										</span>
+									</button>
 								</div>
 							</div>
 							<div id='kukku'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/kukku' alt='cuisinier'>
+										<img onmouseover='kukku1(this)' onmouseout='kukku2(this)' src='../Image/kukku.png' alt='cuisinier'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Petits Kukkus</p>
 									<p><span>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoKukku'>info</button>
+									<button id='infoKukku'>info
+										<span>Engage plus de petits kukkus !<br>
+										 Chaque kukkus clique pour toi X 12 <br><br><br>
+										 +1 achat / 500
+										</span>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -160,39 +184,54 @@
 							<div id='livreur'>
 								<div class='bouton'>
 									<button>
-										<img src='../Image/livreur' alt='livreur'>
+										<img onmouseover='livreur1(this)' onmouseout='livreur2(this)' src='../Image/livreur.png' alt='livreur'>
 									</button>
 								</div>
 
 								<div class='prix'>
 									<p>Petits livreurs</p>
 									<p><span>100k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-									<button id='infoLivreur'>info</button>
+									<button id='infoLivreur'>info
+										<span>Engage plus de petits livreurs !<br>
+		 								Chaque livreur clique pour toi X 50 <br><br><br>
+		 								+1 achat / 500
+										</span>
+									</button>
 								</div>
 							</div>
 							<div id='isakaya'>
 								<div id='restau1'>
 									<div class='bouton'>
 										<button>
-											<img src='../Image/restaurant' alt='restaurant'>
+											<img onmouseover='restaurant1(this)' onmouseout='restaurant2(this)' src='../Image/restaurant.png' alt='restaurant'>
 										</button>
 									</div>
 									<div class='prix'>
 										<p>Isakaya</p>
 										<p><span>1M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-										<button id='infoIsakaya'>info</button>
+										<button id='infoIsakaya'>info
+											<span>Ouvre tes propres Isakaya!<br>
+											 Chaque Isakaya clique pour toi X 250 <br><br><br>
+											 +1 achat / 500
+											</span>
+										</button>
 									</div>
 								</div>
 								<div id='restau2'>
 									<div class='bouton'>
 										<button>
-											<img src='../Image/desRestaurant' alt='restaurant2'>
+											<img onmouseover='desRestaurants1(this)' onmouseout='desRestaurants2(this)' src='../Image/desRestaurants.png' alt='restaurant2'>
 										</button>
 									</div>
 									<div class='prix'>
 										<p>Chaîne d'isakaya</p>
 										<p><span>6.5M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-										<button>info</button>
+										<button id='chaineIsakaya'>info
+											<span>Créer ta chaine d'Isakaya!<br>
+											 Chaque Isakaya clique pour toi X 500 <br><br><br>
+											 +1 achat / 1
+											</span>
+										</button>
 									</div>
 								</div>
 							</div>

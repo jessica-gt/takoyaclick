@@ -142,6 +142,7 @@ body{
 
 #container{
 	background-color: rgba(255,255,255,0.5);
+	cursor: url(../Image/Chopsticks.cur), pointer;
 }
 
 #haut{
@@ -169,6 +170,7 @@ h1{
 	border:none;
 	background:none;
 	outline:none;
+	cursor: url(../Image/Chopsticks.cur), pointer;
 }
 
 /* mise en page du centre de la page*/
@@ -193,6 +195,7 @@ h1{
 	border:none;
 	background:none;
 	outline:none;
+	cursor: url(../Image/Chopsticks.cur), pointer;
 }
 
 #gauche button img{
@@ -239,9 +242,17 @@ span{
 	color:#320F04;
 }
 
+#bento button{
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
 /* Si grand écran */
 @media screen and (min-width: 1500px){
 	
+	body{
+		overflow : hidden;
+	}
+
 	#droite{
 		width:50%;
 	}
@@ -384,12 +395,12 @@ span{
 	}
 
 	#restau1 .bouton{
-		width:100%;
+		height:50%;
 		display:flex;
 	}
 
 	#restau2 .bouton{
-		width:80%;
+		height:55%;
 		display:flex;
 	}
 
@@ -482,7 +493,152 @@ span{
 		box-shadow:10px 15px 10px black;
 		border:black solid 1px;
 	}
+
+	/* INFO SAUCE */
+
+	#infoSauce:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/* INFO KATSUO */
+
+
+	#infoKatsuo:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO BROCHETTE*/
+
+	#infoBrochette:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO BENTO*/
+
+	#infoBento:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO KUKKU*/
+
+	#infoKukku:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: 20px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
 		
+		/*INFO LIVREUR*/
+
+	#infoLivreur:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO ISAKAYA*/
+
+	#infoIsakaya:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+	/*INFO CHAINE ISAKAYA*/
+
+
+	#chaineIsakaya:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -300px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:300px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
 }
 
 /* si petit ecran*/
@@ -749,6 +905,152 @@ span{
 		box-shadow:10px 15px 10px black;
 		border:black solid 1px;
 	}
+
+		/* INFO SAUCE */
+
+	#infoSauce:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/* INFO KATSUO */
+
+	
+	#infoKatsuo:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO BROCHETTE*/
+
+	#infoBrochette:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO BENTO*/
+
+	#infoBento:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO KUKKU*/
+
+	#infoKukku:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO LIVREUR*/
+		
+	#infoLivreur:hover span {
+		display: block;
+		position: absolute;
+		top: -40px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO ISAKAYA*/
+
+	#infoIsakaya:hover span {
+		display: block;
+		position: absolute;
+		top: -200px; 
+		left: -50px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
+
+		/*INFO CHAINE ISAKAYA*/
+
+
+	#chaineIsakaya:hover span {
+		display: block;
+		position: absolute;
+		top: -200px; 
+		left: -100px; 
+		border-radius : 20px;
+		color: black;
+		font-weight:normal;
+		width:100px;
+		background: #D1CB8D;
+		padding: 5px;
+		text-indent: 0;
+		box-shadow:10px 15px 10px black;
+		border:black solid 1px;
+	}
 }
 
 /*infobulle*/
@@ -787,5 +1089,160 @@ span{
 }
 
 #infoPoulpe span  {
+	display: none;
+}
+
+/*INFO SAUCE*/
+
+
+#infoSauce{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoSauce:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoSauce span  {
+	display: none;
+}
+
+/*INFO KATSUOBUSHI*/
+
+
+#infoKatsuo{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoKatsuo:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoKatsuo span  {
+	display: none;
+}
+
+/*INFO BROCHETTE*/
+
+
+#infoBrochette{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoBrochette:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoBrochette span  {
+	display: none;
+}
+
+/*INFO BENTO*/
+
+
+#infoBento{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+
+}
+
+#infoBento:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoBento span  {
+	display: none;
+}
+
+/*INFO KUKKU*/
+
+
+#infoKukku{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoKukku:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoKukku span  {
+	display: none;
+}
+
+/*INFO LIVREUR*/
+
+
+#infoLivreur{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoLivreur:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoLivreur span  {
+	display: none;
+}
+
+/*INFO ISAKAYA*/
+
+
+#infoIsakaya{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+#infoIsakaya:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#infoIsakaya span  {
+	display: none;
+}
+
+/*INFO CHAINE ISAKAYA*/
+
+
+#chaineIsakaya{ 
+	position:relative;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+#chaineIsakaya:hover {
+	background-color: black ;
+	z-index: 50;
+}
+
+#chaineIsakaya span  {
 	display: none;
 }
