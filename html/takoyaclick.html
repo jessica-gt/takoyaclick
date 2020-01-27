@@ -93,33 +93,33 @@
 							</div>
 							<div id='sauce'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerSauce(this)'>
 										<img onmouseover='sauce1(this)' onmouseout='sauce2(this)' src='../Image/sauce.png' alt='sauce'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Sauce</p>
-									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanSauce'>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoSauce'>info
 										<span>Rajoute de la sauce petit Kukku ! <br>
 		 								Chaque sauce te rajoute 100 cliques <br><br><br>
-										 +1 achat / 500</span>
+										 0 / 500</span>
 									</button>
 								</div>
 							</div>
 							<div id='katsuo'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerKatsuo(this)'>
 										<img onmouseover='bonite1(this)' onmouseout='bonite2(this)' src='../Image/bonite.png' alt='bonite'>	
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Katsuobushi</p>
-									<p><span>5k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanKatsuo'>5k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoKatsuo'>info
 										<span>Rajoute du Katsuobushi petit Kukku ! <br>
 		 								Chaque Katsuobushi te rajoute 1000 cliques <br><br><br>
-										 +1 achat / 500
+										 0 / 500
 										</span>
 									</button>
 								</div>
@@ -129,47 +129,47 @@
 						<div id='bentoCentre'>
 							<div id='brochette'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerBrochette(this)'>
 										<img onmouseover='brochette1(this)' onmouseout='brochette2(this)' src='../Image/brochette.png' alt='brochette'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Brochette x3</p>
-									<p><span>500 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanBrochette'>500 x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoBrochette'>info
 										<span>Fais des brochettes petit Kukku ! <br>
 										 Chaque brochette clique pour toi X 3 <br><br><br>
-										 +1 achat / 500
+										 0 / 500
 										</span>
 									</button>
 								</div>
 							</div>
 							<div id='bonusBento'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerBento(this)'>
 										<img onmouseover='bento1(this)' onmouseout='bento2(this)' src='../Image/bento.png' alt='bento'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Bento</p>
-									<p><span>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanBento'>1k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoBento'>info
 										<span>Fais des bentos petit Kukku ! <br>
 										 Chaque bento clique pour toi X 6 <br><br><br>
-										 +1 achat / 500
+										 0 / 500
 										</span>
 									</button>
 								</div>
 							</div>
 							<div id='kukku'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerKukku(this)'>
 										<img onmouseover='kukku1(this)' onmouseout='kukku2(this)' src='../Image/kukku.png' alt='cuisinier'>
 									</button>
 								</div>
 								<div class='prix'>
 									<p>Petits Kukkus</p>
-									<p><span>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span  id='spanBento'>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoKukku'>info
 										<span>Engage plus de petits kukkus !<br>
 										 Chaque kukkus clique pour toi X 12 <br><br><br>
