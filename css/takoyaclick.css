@@ -1,6 +1,9 @@
 /* couleur:
 	Marron - #320F04
 	rouge - #C40A0A
+	bento gauche - #e57373
+	bento centre - #e53935
+	bento droite - #b71c1c
 	Soja - #923434
 	Wasabi - #9B8C08
 	info bulle - #D1CB8D
@@ -248,10 +251,6 @@ span{
 
 /* Si grand écran */
 @media screen and (min-width: 1500px){
-	
-	body{
-		overflow : hidden;
-	}
 
 	#droite{
 		width:50%;
@@ -284,7 +283,7 @@ span{
 		width:100%;
 		height:24%;
 		display:flex;
-		background-color: #C40A0A;
+		background-color: #e57373;
 	}
 
 	#pate{
@@ -341,7 +340,7 @@ span{
 		height:34%;
 		display:flex;
 		flex-direction: column;
-		background-color: #C40A0A;
+		background-color: #e53935;
 		align-items: center;
 		justify-content: center;
 	}
@@ -351,7 +350,7 @@ span{
 		height:48%;
 		display:flex;
 		flex-direction: column;
-		background-color: #C40A0A;
+		background-color: #b71c1c;
 		align-items: center;
 		justify-content: center;
 	}
@@ -367,7 +366,7 @@ span{
 	#restau1, #restau2{
 		width:48%;
 		height:100%;
-		background-color: #C40A0A;
+		background-color: #b71c1c;
 	}
 
 	/* bouton */
@@ -682,7 +681,7 @@ span{
 	#pate, #poulpe, #sauce, #katsuo{
 		width:100%;
 		height:23%;
-		background-color: #C40A0A;
+		background-color: #e57373;
 		display:flex;
 		justify-content: space-between;
 		border-radius: 20px;
@@ -691,7 +690,7 @@ span{
 	#brochette, #bonusBento, #kukku{
 		width:100%;
 		height:31%;
-		background-color: #C40A0A;
+		background-color: #e53935;
 		display:flex;
 		justify-content: space-between;
 		border-radius: 20px;
@@ -700,7 +699,7 @@ span{
 	#livreur{
 		width:100%;
 		height:48%;
-		background-color: #C40A0A;
+		background-color: #b71c1c;
 		display:flex;
 		justify-content: space-between;
 		border-radius: 20px;
@@ -709,7 +708,7 @@ span{
 	#isakaya{
 		width:100%;
 		height:48%;
-		background-color: #C40A0A;
+		background-color: #b71c1c;
 		display:flex;
 		justify-content: space-between;
 		border-radius: 20px;
@@ -875,7 +874,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -894,7 +893,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -912,7 +911,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -931,7 +930,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -949,7 +948,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -967,7 +966,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -985,7 +984,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -1003,7 +1002,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -40px; 
-		left: -100px; 
+		left: -50px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -1021,7 +1020,7 @@ span{
 		display: block;
 		position: absolute;
 		top: -200px; 
-		left: -50px; 
+		left: -30px; 
 		border-radius : 20px;
 		color: black;
 		font-weight:normal;
@@ -1245,4 +1244,29 @@ span{
 
 #infoRestau2 span  {
 	display: none;
+}
+
+/*save/load*/
+#saveLoad{
+	display:flex;
+	justify-content: center;
+}
+
+#saveLoad button{
+	margin:10px;
+	background:#C40A0A;
+	color:#320F04;
+	border:#320F04 solid 5px;
+	font-family: 'Permanent Marker', cursive;
+	border-radius:10px;
+	outline: none;
+	box-shadow: 5px 5px 0px white;
+	width:100px;
+	height:50px;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+	box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6), inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#saveLoad button:active{
+	box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }

@@ -74,6 +74,9 @@ let infoLivreur=document.getElementById('infoLivreur');
 let infoRestau1=document.getElementById('infoRestau1');
 let infoRestau2=document.getElementById('infoRestau2');
 
+
+
+
 //fonction afin de désactiver le bouton entrer
 
 // document.addEventListener("keydown", function(event) {
@@ -86,31 +89,164 @@ let infoRestau2=document.getElementById('infoRestau2');
 
 //fonction sauvegarde
 function save(){
-	localStorage.setItem('score',
-	localStorage.setItem('prixPate', 
-		localStorage.setItem('prixPoulpe',
-		localStorage.setItem( 'prixSauce',
-		localStorage.setItem( 'prixKatsuo',
-		localStorage.setItem( prixBrochette, 
-			localStorage.setItem(prixBento,
-			localStorage.setItem( prixKukku,
-			localStorage.setItem( prixLivreur,
-			localStorage.setItem( prixRestau1, 
-				localStorage.setItem(prixRestau2,
-				localStorage.setItem( cptTotal,
-				localStorage.setItem( cptSeconde,
-				localStorage.setItem( cptPate ,
-				localStorage.setItem( cptPoulpe,
-				localStorage.setItem( cptSauce,
-				localStorage.setItem( cptKatsuo,
-				localStorage.setItem( cptBrochette,
-				localStorage.setItem( cptBento ,
-				localStorage.setItem( cptKukku,
-				localStorage.setItem( cptLivreur,
-				localStorage.setItem( cptRestau1,
-				localStorage.setItem( cptRestau2,
-				localStorage.setItem( cptDrapeau)
+	localStorage.setItem('score', score);
+	localStorage.setItem('prixPate', prixPate);
+	localStorage.setItem('prixPoulpe', prixPoulpe);
+	localStorage.setItem('prixSauce', prixSauce);
+	localStorage.setItem('prixKatsuo', prixKatsuo);
+	localStorage.setItem('prixBrochette', prixBrochette);
+	localStorage.setItem('prixBento', prixBento);
+	localStorage.setItem('prixKukku', prixKukku);
+	localStorage.setItem('prixLivreur', prixLivreur);
+	localStorage.setItem('prixRestau1', prixRestau1);
+	localStorage.setItem('prixRestau2', prixRestau2);
+	localStorage.setItem('cptTotal', cptTotal);
+	localStorage.setItem('cptSeconde', cptSeconde);
+	localStorage.setItem('cptPate', cptPate);
+	localStorage.setItem('cptPoulpe', cptPoulpe);
+	localStorage.setItem('cptSauce', cptSauce);
+	localStorage.setItem('cptKatsuo', cptKatsuo);
+	localStorage.setItem('cptBrochette', cptBrochette);
+	localStorage.setItem('cptBento', cptBento);
+	localStorage.setItem('cptKukku', cptKukku);
+	localStorage.setItem('cptLivreur', cptLivreur);
+	localStorage.setItem('cptRestau1', cptRestau1);
+	localStorage.setItem('cptRestau2', cptRestau2);
+	localStorage.setItem('cptDrapeau', cptDrapeau);
 }
+
+function load(){
+
+	//load variables
+	score=Number(localStorage.getItem('score'));
+	prixPate=Number(localStorage.getItem('prixPate'));
+	prixPoulpe=Number(localStorage.getItem('prixPoulpe'));
+	prixSauce=Number(localStorage.getItem('prixSauce'));
+	prixKatsuo=Number(localStorage.getItem('prixKatsuo'));
+	prixBrochette=Number(localStorage.getItem('prixBrochette'));
+	prixBento=Number(localStorage.getItem('prixBento'));
+	prixKukku=Number(localStorage.getItem('prixKukku'));
+	prixLivreur=Number(localStorage.getItem('prixLivreur'));
+	prixRestau1=Number(localStorage.getItem('prixRestau1'));
+	prixRestau2=Number(localStorage.getItem('prixRestau2'));
+	cptTotal=Number(localStorage.getItem('cptTotal'));
+	cptSeconde=Number(localStorage.getItem('cptSeconde'));
+	cptPate=Number(localStorage.getItem('cptPate'));
+	cptPoulpe=Number(localStorage.getItem('cptPoulpe'));
+	cptSauce=Number(localStorage.getItem('cptSauce'));
+	cptKatsuo=Number(localStorage.getItem('cptKatsuo'));
+	cptBrochette=Number(localStorage.getItem('cptBrochette'));
+	cptBento=Number(localStorage.getItem('cptBento'));
+	cptKukku=Number(localStorage.getItem('cptKukku'));
+	cptLivreur=Number(localStorage.getItem('cptLivreur'));
+	cptRestau1=Number(localStorage.getItem('cptRestau1'));
+	cptRestau2=Number(localStorage.getItem('cptRestau2'));
+	cptDrapeau=Number(localStorage.getItem('cptDrapeau'));
+
+	//load compteur wasabi
+	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+
+	//load pate
+	spanPate.innerHTML=ecritureNb(prixPate)+' x';
+	infoPate.innerHTML='info<span>Rajoute de la pâte à beignet petit Kukku ! <br>Chaque pâte à beignet te rajoute 1 clique <br><br><br>'+ecritureNb(cptPate)+' / 500</span>';
+	if(cptPate>=500){
+			x.disabled=true;
+			alert('FINISH');
+			x.innerHTML='<img src="../Image/pateGris.png" alt="pate">';
+			spanPate.innerHTML='MAX';
+	}
+
+	//load poulpe
+	spanPoulpe.innerHTML=ecritureNb(prixPoulpe)+' x';
+	infoPoulpe.innerHTML='info<span>Rajoute du poulpe petit Kukku ! <br>Chaque pouple te rajoute 5 cliques <br><br><br>'+ecritureNb(cptPoulpe)+' / 500</span>';
+	if(cptPoulpe>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/poulpeGris.png" alt="poulpe">';
+		spanPoulpe.innerHTML='MAX';
+	}
+
+	//load sauce
+	spanSauce.innerHTML=ecritureNb(prixSauce)+' x';
+	infoSauce.innerHTML='info<span>Rajoute de la sauce petit Kukku ! <br>Chaque sauce te rajoute 10 cliques <br><br><br> '+ecritureNb(cptSauce)+' / 500</span>';
+	if(cptSauce>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/sauceGris.png" alt="sauce">';
+		spanSauce.innerHTML='MAX';
+	}
+
+	//load Katsuobushi
+	spanKatsuo.innerHTML=ecritureNb(prixKatsuo)+' x';
+	infoKatsuo.innerHTML='info<span>Rajoute du Katsuobushi petit Kukku ! <br>Chaque Katsuobushi te rajoute 20 cliques <br><br><br> '+ecritureNb(cptKatsuo)+' / 500</span>';
+	if(cptKatsuo>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/boniteGris.png" alt="katsuobuki">';
+		spanKatsuo.innerHTML='MAX';
+	}
+
+	//load Brochette
+	spanBrochette.innerHTML=ecritureNb(prixBrochette)+' x';
+	infoBrochette.innerHTML='info<span>Fais des brochettes petit Kukku ! <br>Chaque brochette clique pour toi X 3 <br><br><br>'+ecritureNb(cptBrochette)+' / 500</span>';
+	if (cptBrochette>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/brochetteGris.png" alt="brochette">';
+		spanBrochette.innerHTML='MAX';
+	}
+
+	//load Bento
+	spanBento.innerHTML=ecritureNb(prixBento)+' x';
+	infoBento.innerHTML='info<span>Fais des bentos petit Kukku ! <br> Chaque bento clique pour toi X 6 <br><br><br>'+ecritureNb(cptBento)+' / 500</span>';
+	if (cptBento>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/bentoGris.png" alt="bento">';
+		spanBento.innerHTML='MAX';
+	}
+
+	//load Kukku
+	spanKukku.innerHTML=ecritureNb(prixKukku)+' x';
+	infoKukku.innerHTML='info<span>Engage plus de petits kukkus !<br> Chaque kukkus clique pour toi X 12 <br><br><br>'+ecritureNb(cptKukku)+' / 500</span>';
+	if (cptKukku>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/kukkuGris.png" alt="kukku">';
+		spanKukku.innerHTML='MAX';
+	}
+
+	//load livreur
+	spanLivreur.innerHTML=ecritureNb(prixLivreur)+' x';
+	infoLivreur.innerHTML='info	<span>Engage plus de petits livreurs !<br>Chaque livreur clique pour toi X 50 <br><br><br>'+ecritureNb(cptLivreur)+' / 500</span>';
+	if (cptLivreur>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/livreurGris.png" alt="livreur">';
+		spanLivreur.innerHTML='MAX';
+	}
+
+	//load Isakaya
+	spanRestau1.innerHTML=ecritureNb(prixRestau1)+' x';
+	infoRestau1.innerHTML='info<span>Ouvre tes propres Isakaya!<br>Chaque Isakaya clique pour toi X 250 <br><br><br>'+ecritureNb(cptRestau1)+' / 500</span>';
+	if (cptRestau1>=500){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/restaurantGris.png" alt="restaurant">';
+		spanRestau1.innerHTML='MAX';
+	}
+
+	//load Chaine d'Isakaya
+	spanRestau2.innerHTML=ecritureNb(prixRestau2)+' x';
+	infoRestau2.innerHTML='info<span>Créer ta chaine d\'Isakaya!<br>Chaque Isakaya clique pour toi X 500 <br><br><br>'+ecritureNb(cptRestau2)+' / 1</span>';
+	if (cptRestau2>=1){
+		x.disabled=true;
+		alert('FINISH');
+		x.innerHTML='<img src="../Image/desRestaurantsGris.png" alt="restaurants">';
+		spanRestau2.innerHTML='MAX';
+	}
+}
+
 
 //ecriture nombre k,M,mi,...
 function ecritureNb(nb){
