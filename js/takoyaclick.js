@@ -26,9 +26,9 @@ let wasabi=document.getElementById('wasabi');
 let soja=document.getElementById('soja');
 let score=0;
 let prixPate = 50;
-let prixPoulpe = 100;
-let prixSauce = 1000;
-let prixKatsuo = 5000;
+let prixPoulpe = 500;
+let prixSauce = 5000;
+let prixKatsuo = 8000;
 let prixBrochette = 500;
 let prixBento = 1000;
 let prixKukku = 10000;
@@ -84,16 +84,44 @@ let infoRestau2=document.getElementById('infoRestau2');
 // }, true);
 
 
+//fonction sauvegarde
+function save(){
+	localStorage.setItem('score',
+	localStorage.setItem('prixPate', 
+		localStorage.setItem('prixPoulpe',
+		localStorage.setItem( 'prixSauce',
+		localStorage.setItem( 'prixKatsuo',
+		localStorage.setItem( prixBrochette, 
+			localStorage.setItem(prixBento,
+			localStorage.setItem( prixKukku,
+			localStorage.setItem( prixLivreur,
+			localStorage.setItem( prixRestau1, 
+				localStorage.setItem(prixRestau2,
+				localStorage.setItem( cptTotal,
+				localStorage.setItem( cptSeconde,
+				localStorage.setItem( cptPate ,
+				localStorage.setItem( cptPoulpe,
+				localStorage.setItem( cptSauce,
+				localStorage.setItem( cptKatsuo,
+				localStorage.setItem( cptBrochette,
+				localStorage.setItem( cptBento ,
+				localStorage.setItem( cptKukku,
+				localStorage.setItem( cptLivreur,
+				localStorage.setItem( cptRestau1,
+				localStorage.setItem( cptRestau2,
+				localStorage.setItem( cptDrapeau)
+}
+
 //ecriture nombre k,M,mi,...
 function ecritureNb(nb){
 	if (nb>=1000000000000){
-		return((Math.round(nb/100000000000)/10)+'bi');
+		return((Math.round(nb/10000000000)/100)+'bi');
 	}else if (nb>=1000000000){
-		return((Math.round(nb/100000000)/10)+'mi');
+		return((Math.round(nb/10000000)/100)+'mi');
 	}else if(nb>=1000000){
-		return((Math.round(nb/100000)/10)+'M');
+		return((Math.round(nb/10000)/100)+'M');
 	}else if (nb>=1000){
-		return((Math.round(nb/100)/10)+'k');
+		return((Math.round(nb/10)/100)+'k');
 	}else if (nb<1000){
 		return(nb);
 	}
@@ -258,12 +286,12 @@ function incrementerPate (x) {
 function incrementerPoulpe (x) {
 	if (score>=prixPoulpe){
 		cptPoulpe++;
-		cptTotal=cptTotal+10;
+		cptTotal=cptTotal+5;
 		score=score-prixPoulpe;
-		prixPoulpe=prixPoulpe+100;
+		prixPoulpe=prixPoulpe+500;
 		spanPoulpe.innerHTML=ecritureNb(prixPoulpe)+' x';
 		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-		infoPoulpe.innerHTML='info<span>Rajoute du poulpe petit Kukku ! <br>Chaque pouple te rajoute 10 cliques <br><br><br>'+ecritureNb(cptPoulpe)+' / 500</span>';
+		infoPoulpe.innerHTML='info<span>Rajoute du poulpe petit Kukku ! <br>Chaque pouple te rajoute 5 cliques <br><br><br>'+ecritureNb(cptPoulpe)+' / 500</span>';
 		if(cptPoulpe>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -279,12 +307,12 @@ function incrementerPoulpe (x) {
 function incrementerSauce (x) {
 	if (score>=prixSauce){
 		cptSauce++;
-		cptTotal=cptTotal+100;
+		cptTotal=cptTotal+10;
 		score=score-prixSauce;
-		prixSauce=prixSauce+300;
+		prixSauce=prixSauce+500;
 		spanSauce.innerHTML=ecritureNb(prixSauce)+' x';
 		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-		infoSauce.innerHTML='info<span>Rajoute de la sauce petit Kukku ! <br>Chaque sauce te rajoute 100 cliques <br><br><br> '+ecritureNb(cptSauce)+' / 500</span>';
+		infoSauce.innerHTML='info<span>Rajoute de la sauce petit Kukku ! <br>Chaque sauce te rajoute 10 cliques <br><br><br> '+ecritureNb(cptSauce)+' / 500</span>';
 		if(cptSauce>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -300,12 +328,12 @@ function incrementerSauce (x) {
 function incrementerKatsuo (x) {
 	if (score>=prixKatsuo){
 		cptKatsuo++;
-		cptTotal=cptTotal+1000;
+		cptTotal=cptTotal+20;
 		score=score-prixKatsuo;
-		prixKatsuo=prixKatsuo+1000;
+		prixKatsuo=prixKatsuo+500;
 		spanKatsuo.innerHTML=ecritureNb(prixKatsuo)+' x';
 		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-		infoKatsuo.innerHTML='info<span>Rajoute du Katsuobushi petit Kukku ! <br>Chaque Katsuobushi te rajoute 1000 cliques <br><br><br> '+ecritureNb(cptKatsuo)+' / 500</span>';
+		infoKatsuo.innerHTML='info<span>Rajoute du Katsuobushi petit Kukku ! <br>Chaque Katsuobushi te rajoute 20 cliques <br><br><br> '+ecritureNb(cptKatsuo)+' / 500</span>';
 		if(cptKatsuo>=500){
 			x.disabled=true;
 			alert('FINISH');
