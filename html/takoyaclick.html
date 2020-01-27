@@ -169,11 +169,11 @@
 								</div>
 								<div class='prix'>
 									<p>Petits Kukkus</p>
-									<p><span  id='spanBento'>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanKukku'>10k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoKukku'>info
 										<span>Engage plus de petits kukkus !<br>
 										 Chaque kukkus clique pour toi X 12 <br><br><br>
-										 +1 achat / 500
+										 0 / 500
 										</span>
 									</button>
 								</div>
@@ -183,18 +183,18 @@
 						<div id='bentoDroite'>
 							<div id='livreur'>
 								<div class='bouton'>
-									<button>
+									<button onclick='incrementerLivreur(this)'>
 										<img onmouseover='livreur1(this)' onmouseout='livreur2(this)' src='../Image/livreur.png' alt='livreur'>
 									</button>
 								</div>
 
 								<div class='prix'>
 									<p>Petits livreurs</p>
-									<p><span>100k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+									<p><span id='spanLivreur'>100k x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
 									<button id='infoLivreur'>info
 										<span>Engage plus de petits livreurs !<br>
 		 								Chaque livreur clique pour toi X 50 <br><br><br>
-		 								+1 achat / 500
+		 								0 / 500
 										</span>
 									</button>
 								</div>
@@ -202,34 +202,34 @@
 							<div id='isakaya'>
 								<div id='restau1'>
 									<div class='bouton'>
-										<button>
+										<button onclick='incrementerRestau1(this)'>
 											<img onmouseover='restaurant1(this)' onmouseout='restaurant2(this)' src='../Image/restaurant.png' alt='restaurant'>
 										</button>
 									</div>
 									<div class='prix'>
 										<p>Isakaya</p>
-										<p><span>1M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-										<button id='infoIsakaya'>info
+										<p><span id='spanRestau1'>1M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+										<button id='infoRestau1'>info
 											<span>Ouvre tes propres Isakaya!<br>
 											 Chaque Isakaya clique pour toi X 250 <br><br><br>
-											 +1 achat / 500
+											 0 / 500
 											</span>
 										</button>
 									</div>
 								</div>
 								<div id='restau2'>
 									<div class='bouton'>
-										<button>
+										<button onclick='incrementerRestau2(this)'>
 											<img onmouseover='desRestaurants1(this)' onmouseout='desRestaurants2(this)' src='../Image/desRestaurants.png' alt='restaurant2'>
 										</button>
 									</div>
 									<div class='prix'>
 										<p>Chaîne d'isakaya</p>
-										<p><span>6.5M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
-										<button id='chaineIsakaya'>info
+										<p><span id='spanRestau2'>6.5M x </span><img src='../Image/takoyaki' alt='takoyaki'></p>
+										<button id='infoRestau2'>info
 											<span>Créer ta chaine d'Isakaya!<br>
 											 Chaque Isakaya clique pour toi X 500 <br><br><br>
-											 +1 achat / 1
+											 0 / 1
 											</span>
 										</button>
 									</div>

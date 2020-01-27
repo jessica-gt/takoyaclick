@@ -33,8 +33,8 @@ let prixBrochette = 500;
 let prixBento = 1000;
 let prixKukku = 10000;
 let prixLivreur = 100000;
-let prixIsakaya = 1000000;
-let prixChaine = 6500000;
+let prixRestau1 = 1000000;
+let prixRestau2 = 6500000;
 
 let cptTotal=1;
 let cptSeconde=0;
@@ -47,8 +47,8 @@ let cptBrochette = 0;
 let cptBento = 0;
 let cptKukku = 0;
 let cptLivreur = 0;
-let cptIsakaya = 0;
-let cptChaine = 0;
+let cptRestau1 = 0;
+let cptRestau2 = 0;
 
 let cptDrapeau = 0;
 
@@ -56,11 +56,23 @@ let spanPate=document.getElementById('spanPate');
 let spanPoulpe=document.getElementById('spanPoulpe');
 let spanSauce=document.getElementById('spanSauce');
 let spanKatsuo=document.getElementById('spanKatsuo');
+let spanBrochette=document.getElementById('spanBrochette');
+let spanBento=document.getElementById('spanBento');
+let spanKukku=document.getElementById('spanKukku');
+let spanLivreur=document.getElementById('spanLivreur');
+let spanRestau1=document.getElementById('spanRestau1');
+let spanRestau2=document.getElementById('spanRestau2');
 
 let infoPate=document.getElementById('infoPate');
 let infoPoulpe=document.getElementById('infoPoulpe');
 let infoSauce=document.getElementById('infoSauce');
 let infoKatsuo=document.getElementById('infoKatsuo');
+let infoBrochette=document.getElementById('infoBrochette');
+let infoBento=document.getElementById('infoBento');
+let infoKukku=document.getElementById('infoKukku');
+let infoLivreur=document.getElementById('infoLivreur');
+let infoRestau1=document.getElementById('infoRestau1');
+let infoRestau2=document.getElementById('infoRestau2');
 
 //fonction afin de désactiver le bouton entrer
 
@@ -72,11 +84,26 @@ let infoKatsuo=document.getElementById('infoKatsuo');
 // }, true);
 
 
+//ecriture nombre k,M,mi,...
+function ecritureNb(nb){
+	if (nb>=1000000000000){
+		return((Math.round(nb/100000000000)/10)+'bi');
+	}else if (nb>=1000000000){
+		return((Math.round(nb/100000000)/10)+'mi');
+	}else if(nb>=1000000){
+		return((Math.round(nb/100000)/10)+'M');
+	}else if (nb>=1000){
+		return((Math.round(nb/100)/10)+'k');
+	}else if (nb<1000){
+		return(nb);
+	}
+}
+
 //Animation takoyaki
 takoyaki.addEventListener('mousedown', function(e){
 	let r=Math.round(Math.random()*17)+1;
 	var plus=document.getElementById('plusScore'+r);
-	plus.innerHTML='+'+cptTotal+'<img src="../Image/takoyaki" alt="takoyaki" height:"50px" width="50px">';
+	plus.innerHTML='+'+ecritureNb(cptTotal)+'<img src="../Image/takoyaki" alt="takoyaki" height:"50px" width="50px">';
 	if (r<=6){	
 		plus.setAttribute('class','on1');
 	}else if (r>=13){	
@@ -204,7 +231,7 @@ function tako2(x){
 
 function buttonClick(){
 	score=score+cptTotal; // score = score + compteur
-    wasabi.innerHTML='<p>'+score+'</p>';
+    wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 }
 
 function incrementerPate (x) {
@@ -213,9 +240,9 @@ function incrementerPate (x) {
 		cptTotal++;
 		score=score-prixPate;
 		prixPate=prixPate+50;
-		spanPate.innerHTML=prixPate+' x';
-		wasabi.innerHTML='<p>'+score+'</p>';
-		infoPate.innerHTML='info<span>Rajoute de la pâte à beignet petit Kukku ! <br>Chaque pâte à beignet te rajoute 1 clique <br><br><br>'+cptPate+' / 500</span>';
+		spanPate.innerHTML=ecritureNb(prixPate)+' x';
+		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+		infoPate.innerHTML='info<span>Rajoute de la pâte à beignet petit Kukku ! <br>Chaque pâte à beignet te rajoute 1 clique <br><br><br>'+ecritureNb(cptPate)+' / 500</span>';
 		if(cptPate>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -234,9 +261,9 @@ function incrementerPoulpe (x) {
 		cptTotal=cptTotal+10;
 		score=score-prixPoulpe;
 		prixPoulpe=prixPoulpe+100;
-		spanPoulpe.innerHTML=prixPoulpe+' x';
-		wasabi.innerHTML='<p>'+score+'</p>';
-		infoPoulpe.innerHTML='info<span>Rajoute du poulpe petit Kukku ! <br>Chaque pouple te rajoute 10 cliques <br><br><br>'+cptPoulpe+' / 500</span>';
+		spanPoulpe.innerHTML=ecritureNb(prixPoulpe)+' x';
+		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+		infoPoulpe.innerHTML='info<span>Rajoute du poulpe petit Kukku ! <br>Chaque pouple te rajoute 10 cliques <br><br><br>'+ecritureNb(cptPoulpe)+' / 500</span>';
 		if(cptPoulpe>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -255,9 +282,9 @@ function incrementerSauce (x) {
 		cptTotal=cptTotal+100;
 		score=score-prixSauce;
 		prixSauce=prixSauce+300;
-		spanSauce.innerHTML=prixSauce+' x';
-		wasabi.innerHTML='<p>'+score+'</p>';
-		infoSauce.innerHTML='info<span>Rajoute de la sauce petit Kukku ! <br>Chaque sauce te rajoute 100 cliques <br><br><br> '+cptSauce+' / 500</span>';
+		spanSauce.innerHTML=ecritureNb(prixSauce)+' x';
+		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+		infoSauce.innerHTML='info<span>Rajoute de la sauce petit Kukku ! <br>Chaque sauce te rajoute 100 cliques <br><br><br> '+ecritureNb(cptSauce)+' / 500</span>';
 		if(cptSauce>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -276,9 +303,9 @@ function incrementerKatsuo (x) {
 		cptTotal=cptTotal+1000;
 		score=score-prixKatsuo;
 		prixKatsuo=prixKatsuo+1000;
-		spanKatsuo.innerHTML=prixKatsuo+' x';
-		wasabi.innerHTML='<p>'+score+'</p>';
-		infoKatsuo.innerHTML='info<span>Rajoute du Katsuobushi petit Kukku ! <br>Chaque Katsuobushi te rajoute 1000 cliques <br><br><br> '+cptKatsuo+' / 500</span>';
+		spanKatsuo.innerHTML=ecritureNb(prixKatsuo)+' x';
+		wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+		infoKatsuo.innerHTML='info<span>Rajoute du Katsuobushi petit Kukku ! <br>Chaque Katsuobushi te rajoute 1000 cliques <br><br><br> '+ecritureNb(cptKatsuo)+' / 500</span>';
 		if(cptKatsuo>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -294,7 +321,7 @@ function incrementerKatsuo (x) {
 function incrementerBrochette(x){
 	function clickBrochette(){
 		score=score+(cptBrochette*3); // score = score + compteur
-    	wasabi.innerHTML='<p>'+score+'</p>';
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 	}
 	if (score>=prixBrochette){
 		cptBrochette++;
@@ -305,9 +332,9 @@ function incrementerBrochette(x){
 			clearInterval(intervalBrochette);
 		}
 		intervalBrochette=setInterval(clickBrochette,1000);
-		spanBrochette.innerHTML=prixBrochette+' x';
-		soja.innerHTML='<p>'+cptSeconde+'/sec</p>';
-		infoBrochette.innerHTML='info<span>Fais des brochettes petit Kukku ! <br>Chaque brochette clique pour toi X 3 <br><br><br>'+cptBrochette+' / 500</span>';
+		spanBrochette.innerHTML=ecritureNb(prixBrochette)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoBrochette.innerHTML='info<span>Fais des brochettes petit Kukku ! <br>Chaque brochette clique pour toi X 3 <br><br><br>'+ecritureNb(cptBrochette)+' / 500</span>';
 		if (cptBrochette>=500){
 			x.disabled=true;
 			alert('FINISH');
@@ -322,7 +349,7 @@ function incrementerBrochette(x){
 function incrementerBento(x){
 	function clickBento(){
 		score=score+(cptBento*6); // score = score + compteur
-    	wasabi.innerHTML='<p>'+score+'</p>';
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 	}
 	if (score>=prixBento){
 		cptBento++;
@@ -333,14 +360,14 @@ function incrementerBento(x){
 			clearInterval(intervalBento);
 		}
 		intervalBento=setInterval(clickBento,1000);
-		spanBento.innerHTML=prixBento+' x';
-		soja.innerHTML='<p>'+cptSeconde+'/sec</p>';
-		infoBento.innerHTML='info<span>Fais des bentos petit Kukku ! <br> Chaque bento clique pour toi X 6 <br><br><br>'+cptBento+' / 500</span>';
+		spanBento.innerHTML=ecritureNb(prixBento)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoBento.innerHTML='info<span>Fais des bentos petit Kukku ! <br> Chaque bento clique pour toi X 6 <br><br><br>'+ecritureNb(cptBento)+' / 500</span>';
 		if (cptBento>=500){
 			x.disabled=true;
 			alert('FINISH');
 			x.innerHTML='<img src="../Image/bentoGris.png" alt="bento">';
-			spanBrochette.innerHTML='MAX';
+			spanBento.innerHTML='MAX';
 		}
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
@@ -350,7 +377,7 @@ function incrementerBento(x){
 function incrementerKukku(x){
 	function clickKukku(){
 		score=score+(cptKukku*12); // score = score + compteur
-    	wasabi.innerHTML='<p>'+score+'</p>';
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 	}
 	if (score>=prixKukku){
 		cptKukku++;
@@ -361,14 +388,98 @@ function incrementerKukku(x){
 			clearInterval(intervalKukku);
 		}
 		intervalKukku=setInterval(clickKukku,1000);
-		spanKukku.innerHTML=prixKukku+' x';
-		soja.innerHTML='<p>'+cptSeconde+'/sec</p>';
-		infoKukku.innerHTML='info<span>Engage plus de petits kukkus !<br> Chaque kukkus clique pour toi X 12 <br><br><br>'+cptKukku+' / 500</span>';
+		spanKukku.innerHTML=ecritureNb(prixKukku)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoKukku.innerHTML='info<span>Engage plus de petits kukkus !<br> Chaque kukkus clique pour toi X 12 <br><br><br>'+ecritureNb(cptKukku)+' / 500</span>';
 		if (cptKukku>=500){
 			x.disabled=true;
 			alert('FINISH');
 			x.innerHTML='<img src="../Image/kukkuGris.png" alt="kukku">';
 			spanKukku.innerHTML='MAX';
+		}
+	}else{
+		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
+	}
+}
+
+function incrementerLivreur(x){
+	function clickLivreur(){
+		score=score+(cptLivreur*50); // score = score + compteur
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+	}
+	if (score>=prixLivreur){
+		cptLivreur++;
+		cptSeconde=cptSeconde+50;
+		score=score-prixLivreur;
+		prixLivreur=prixLivreur+5000;
+		if (cptLivreur>1){
+			clearInterval(intervalLivreur);
+		}
+		intervalLivreur=setInterval(clickLivreur,1000);
+		spanLivreur.innerHTML=ecritureNb(prixLivreur)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoLivreur.innerHTML='info	<span>Engage plus de petits livreurs !<br>Chaque livreur clique pour toi X 50 <br><br><br>'+ecritureNb(cptLivreur)+' / 500</span>';
+		if (cptLivreur>=500){
+			x.disabled=true;
+			alert('FINISH');
+			x.innerHTML='<img src="../Image/livreurGris.png" alt="livreur">';
+			spanLivreur.innerHTML='MAX';
+		}
+	}else{
+		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
+	}
+}
+
+function incrementerRestau1(x){
+	function clickRestau1(){
+		score=score+(cptRestau1*250); // score = score + compteur
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+	}
+	if (score>=prixRestau1){
+		cptRestau1++;
+		cptSeconde=cptSeconde+250;
+		score=score-prixRestau1;
+		prixRestau1=prixRestau1+10000;
+		if (cptRestau1>1){
+			clearInterval(intervalRestau1);
+		}
+		intervalRestau1=setInterval(clickRestau1,1000);
+		spanRestau1.innerHTML=ecritureNb(prixRestau1)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoRestau1.innerHTML='info<span>Ouvre tes propres Isakaya!<br>Chaque Isakaya clique pour toi X 250 <br><br><br>'+ecritureNb(cptRestau1)+' / 500</span>';
+		if (cptRestau1>=500){
+			x.disabled=true;
+			alert('FINISH');
+			x.innerHTML='<img src="../Image/restaurantGris.png" alt="restaurant">';
+			spanRestau1.innerHTML='MAX';
+		}
+	}else{
+		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
+	}
+}
+
+function incrementerRestau2(x){
+	function clickRestau2(){
+		score=score+(cptRestau2*500); // score = score + compteur
+    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+	}
+	if (score>=prixRestau2){
+		cptRestau2++;
+		cptSeconde=cptSeconde+500;
+		score=score-prixRestau2;
+		prixRestau2=prixRestau2+300000;
+		if (cptRestau2>1){
+			clearInterval(intervalRestau2);
+		}
+		intervalRestau2=setInterval(clickRestau2,1000);
+		spanRestau2.innerHTML=ecritureNb(prixRestau2)+' x';
+		soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
+		infoRestau2.innerHTML='info<span>Créer ta chaine d\'Isakaya!<br>Chaque Isakaya clique pour toi X 500 <br><br><br>'+ecritureNb(cptRestau2)+' / 1</span>';
+		if (cptRestau2>=1){
+			x.disabled=true;
+			alert('FINISH');
+			x.innerHTML='<img src="../Image/desRestaurantsGris.png" alt="restaurants">';
+			spanRestau2.innerHTML='MAX';
 		}
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
