@@ -163,7 +163,8 @@ h1{
 }
 
 #haut button img{
-	width:100%;
+	width:90%;
+	border:solid 2px black;
 }
 
 #haut button{

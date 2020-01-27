@@ -2,6 +2,7 @@
 
 //variables +1 mignon
 let takoyaki=document.getElementById('takoyaki');
+
 let plusScore1=document.getElementById('plusScore1');
 let plusScore2=document.getElementById('plusScore2');
 let	plusScore3=document.getElementById('plusScore3');
@@ -24,6 +25,7 @@ let	plusScore18=document.getElementById('plusScore18');
 //variables VRAi js
 let wasabi=document.getElementById('wasabi');
 let soja=document.getElementById('soja');
+let flag=document.getElementById('flag');
 let score=0;
 let prixPate = 50;
 let prixPoulpe = 500;
@@ -143,8 +145,9 @@ function load(){
 	cptRestau2=Number(localStorage.getItem('cptRestau2'));
 	cptDrapeau=Number(localStorage.getItem('cptDrapeau'));
 
-	//load compteur wasabi
+	//load compteur wasabi/soja
 	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+	soja.innerHTML='<p>'+ecritureNb(cptSeconde)+'/sec</p>';
 
 	//load pate
 	spanPate.innerHTML=ecritureNb(prixPate)+' x';
@@ -194,6 +197,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/brochetteGris.png" alt="brochette">';
 		spanBrochette.innerHTML='MAX';
+	}else if (cptBrochette>=1){
+		intervalBrochette=setInterval(clickBrochette,1000);
 	}
 
 	//load Bento
@@ -204,6 +209,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/bentoGris.png" alt="bento">';
 		spanBento.innerHTML='MAX';
+	}else if (cptBento>=1){
+		intervalBento=setInterval(clickBento,1000);
 	}
 
 	//load Kukku
@@ -214,6 +221,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/kukkuGris.png" alt="kukku">';
 		spanKukku.innerHTML='MAX';
+	}else if (cptKukku>=1){
+		intervalKukku=setInterval(clickKukku,1000);
 	}
 
 	//load livreur
@@ -224,6 +233,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/livreurGris.png" alt="livreur">';
 		spanLivreur.innerHTML='MAX';
+	}else if (cptLivreur>=1){
+		intervalLivreur=setInterval(clickLivreur,1000);
 	}
 
 	//load Isakaya
@@ -234,6 +245,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/restaurantGris.png" alt="restaurant">';
 		spanRestau1.innerHTML='MAX';
+	}else if (cptRestau1>=1){
+		intervalRestau1=setInterval(clickRestau1,1000);
 	}
 
 	//load Chaine d'Isakaya
@@ -244,6 +257,8 @@ function load(){
 		alert('FINISH');
 		x.innerHTML='<img src="../Image/desRestaurantsGris.png" alt="restaurants">';
 		spanRestau2.innerHTML='MAX';
+	}else if(cptRestau2>=1){
+		intervalRestau2=setInterval(clickRestau2,1000);
 	}
 }
 
@@ -482,11 +497,13 @@ function incrementerKatsuo (x) {
 	}
 }
 
+function clickBrochette(){
+	score=score+(cptBrochette*3); // score = score + compteur
+ 	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerBrochette(x){
-	function clickBrochette(){
-		score=score+(cptBrochette*3); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixBrochette){
 		cptBrochette++;
 		cptSeconde=cptSeconde+3;
@@ -510,11 +527,13 @@ function incrementerBrochette(x){
 	}
 }
 
+function clickBento(){
+	score=score+(cptBento*6); // score = score + compteur
+   	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerBento(x){
-	function clickBento(){
-		score=score+(cptBento*6); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixBento){
 		cptBento++;
 		cptSeconde=cptSeconde+6;
@@ -538,11 +557,13 @@ function incrementerBento(x){
 	}
 }
 
+function clickKukku(){
+	score=score+(cptKukku*12); // score = score + compteur
+   	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerKukku(x){
-	function clickKukku(){
-		score=score+(cptKukku*12); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixKukku){
 		cptKukku++;
 		cptSeconde=cptSeconde+12;
@@ -566,11 +587,13 @@ function incrementerKukku(x){
 	}
 }
 
+function clickLivreur(){
+	score=score+(cptLivreur*50); // score = score + compteur
+   	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerLivreur(x){
-	function clickLivreur(){
-		score=score+(cptLivreur*50); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixLivreur){
 		cptLivreur++;
 		cptSeconde=cptSeconde+50;
@@ -594,11 +617,13 @@ function incrementerLivreur(x){
 	}
 }
 
+function clickRestau1(){
+	score=score+(cptRestau1*250); // score = score + compteur
+   	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerRestau1(x){
-	function clickRestau1(){
-		score=score+(cptRestau1*250); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixRestau1){
 		cptRestau1++;
 		cptSeconde=cptSeconde+250;
@@ -622,11 +647,13 @@ function incrementerRestau1(x){
 	}
 }
 
+function clickRestau2(){
+	score=score+(cptRestau2*500); // score = score + compteur
+   	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
+}
+
 function incrementerRestau2(x){
-	function clickRestau2(){
-		score=score+(cptRestau2*500); // score = score + compteur
-    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
-	}
+
 	if (score>=prixRestau2){
 		cptRestau2++;
 		cptSeconde=cptSeconde+500;
@@ -648,4 +675,8 @@ function incrementerRestau2(x){
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}
+}
+
+if (cptPate>=500 && cptPoulpe>=500 && cptSauce>=500 && cptKatsuo>=500 && cptBrochette>=500 && cptBento>=500 && cptKukku>=500 && cptLivreur>=500 && cptRestau1>=500 && cptRestau2>=1){
+	flag.style.border='solid 2px yellow';
 }
