@@ -177,6 +177,26 @@ h1{
 	cursor: url(../Image/Chopsticks.cur), pointer;
 }
 
+.flag1 img{
+	-webkit-animation-name: clignote; /*on affecte l'animation clignote à notre bouton*/
+	-webkit-animation-duration: 1s; /*on définit la durée de l'animation à 1s*/
+	-webkit-animation-iteration-count:0; /*on dit que l'animation s'arrete.*/
+}
+
+.flag2 img{
+	-webkit-animation-name: clignote; /*on affecte l'animation clignote à notre bouton*/
+	-webkit-animation-duration: 1s; /*on définit la durée de l'animation à 1s*/
+	-webkit-animation-iteration-count:infinite; /*on dit que l'animation se répétera à l'infini.*/
+}
+
+@-webkit-keyframes clignote {
+	0%{box-shadow:0px 0px 10px 5px #320F04;}
+	50%{box-shadow:0px 0px 0px 5px red;}
+	100%{box-shadow:0px 0px 10px 5px  #320F04;}
+}
+
+
+
 /* mise en page du centre de la page*/
 
 #jeu{
@@ -1270,4 +1290,28 @@ span{
 
 #saveLoad button:active{
 	box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+#saveAlert, #loadAlert{
+	padding: 20px;
+	background-color: #f44336; /* Red */
+	color: white;
+	margin-bottom: 15px;
+	display:none;
+}
+
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+	cursor: url(../Image/Chopsticks.cur), pointer;
+}
+
+.closebtn:hover {
+	color: black;
 }
