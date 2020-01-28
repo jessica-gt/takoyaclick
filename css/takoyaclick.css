@@ -139,7 +139,6 @@ body{
 	margin:0 auto;
 	padding:0;
 	position:relative;
-	background:url('../Image/background');
 	font-family:'Pangolin', cursive;
 }
 
@@ -1314,4 +1313,86 @@ span{
 
 .closebtn:hover {
 	color: black;
+}
+
+/*tsunami event*/
+
+.tsunami1{
+	position: absolute;
+	z-index: 9;
+	height: 90%;
+	top:10%;
+	left:-100%;
+
+	-webkit-animation-name:tsunami-movement ;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: 1;
+	animation-fill-mode :forwards;
+}
+
+.tsunami2 {
+	position: absolute;
+	z-index: 8;
+	height: 80%;
+	top:15%;
+	left:-90%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 9s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami3 {
+	position: absolute;
+	z-index: 7;
+	height: 70%;
+	top:20%;
+	left:-80%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration:8s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami4 {
+	position: absolute;
+	z-index: 6;
+	height: 60%;
+	top:25%;
+	left:-70%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 7s;
+	animation-fill-mode :forwards;
+}
+
+.tsunami5 {
+	position: absolute;
+	z-index: 5;
+	height: 50%;
+	top:30%;
+	left:-60%;
+
+	-webkit-animation-name: tsunami-movement;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 6s;
+	animation-fill-mode :forwards;
+}
+
+@-webkit-keyframes tsunami-movement {
+	99% {
+    	opacity: 0;
+    	-webkit-transform: translateX(1000px);
+    	-moz-transform: translateX(1000px);
+    	transform: translateX(1000px);
+    	animation-iteration-count: 1;
+  	}
+  	100% {
+  		left:0%;
+  		opacity:0;
+  	}
 }

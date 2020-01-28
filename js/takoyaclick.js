@@ -56,6 +56,7 @@ let cptRestau1 = 0;
 let cptRestau2 = 0;
 
 let cptDrapeau = 0;
+let timer=Date.now();
 
 let spanPate=document.getElementById('spanPate');
 let spanPoulpe=document.getElementById('spanPoulpe');
@@ -92,6 +93,7 @@ let livreur=document.getElementById('livreur').firstElementChild.firstElementChi
 let restau1=document.getElementById('restau1').firstElementChild.firstElementChild;
 let restau2=document.getElementById('restau2').firstElementChild.firstElementChild;
 
+document.getElementById('container').parentNode.style.background='url("../Image/bg'+(cptDrapeau+1)+'.png")';
 
 
 //fonction afin de désactiver le bouton entrer
@@ -132,9 +134,14 @@ function save(){
 	localStorage.setItem('cptDrapeau', cptDrapeau);
 	localStorage.setItem('max1', max1);
 	localStorage.setItem('max2', max2);
+	localStorage.setItem('timer',Date.now());
 
 	//alert
 	saveAlert.style.display='block';
+	function stopSave(){
+		saveAlert.style.display='none';
+	}
+	setTimeout(stopSave,2000);
 }
 
 function maj(){
@@ -158,6 +165,8 @@ function maj(){
 		default:
 		flag.firstElementChild.src='../Image/drapeau';
 	}
+
+
 
 	//maj compteur wasabi/soja
 	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -321,6 +330,9 @@ function maj(){
 		flag.className='flag1';
 		flag.disabled='true';
 	}
+
+	//bg
+	document.getElementById('container').parentNode.style.background='url("../Image/bg'+(cptDrapeau+1)+'.png")';
 }
 
 function load(){
@@ -352,12 +364,27 @@ function load(){
 	cptDrapeau=Number(localStorage.getItem('cptDrapeau'));
 	max1=Number(localStorage.getItem('max1'));
 	max2=Number(localStorage.getItem('max2'));
+	timer=Number(localStorage.getItem('timer'));
+
+	score=score+(cptSeconde*Math.round((Date.now()-timer)/1000));
+	console.log(Math.round(Date.now()-timer)/1000);
+
+
+	//effacement des intervalles avant re-création
+	for (var i = 1; i<10000; i++){
+        window.clearInterval(i);
+	}
 
 	//maj
-	maj();	
+	maj();
+
 
 	//alert
 	loadAlert.style.display='block';
+	function stopLoad(){
+		loadAlert.style.display='none';
+	}
+	setTimeout(stopLoad,2000);
 }
 
 
@@ -927,8 +954,8 @@ function buttonFlag(){
 
 		cptTotal=0;
 		cptSeconde=0;
-		max1=500;
-		max2=250;
+		max1=500*(cptDrapeau+1);
+		max2=250*(cptDrapeau+1);
 
 		cptPate = 0;
 		cptPoulpe = 0;
