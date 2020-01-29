@@ -1,4 +1,4 @@
-// mise en place des variables
+// ----------------------------------------------------mise en place des variables
 
 //variables +1 mignon
 let takoyaki=document.getElementById('takoyaki');
@@ -22,23 +22,28 @@ let	plusScore16=document.getElementById('plusScore16');
 let	plusScore17=document.getElementById('plusScore17');
 let	plusScore18=document.getElementById('plusScore18');
 
-//variables VRAi js
+//variables element d'affichage
 let wasabi=document.getElementById('wasabi');
 let soja=document.getElementById('soja');
+
+//variables element drapeau
 let flag=document.getElementById('flag');
 let flag2=document.getElementById('flag2');
+
+//variables score et prix
 let score=0;
 let prixPate = 50;
 let prixPoulpe = 500;
 let prixSauce = 5000;
 let prixKatsuo = 8000;
-let prixBrochette = 500;
-let prixBento = 1000;
+let prixBrochette = 1000;
+let prixBento = 2500;
 let prixKukku = 10000;
 let prixLivreur = 100000;
 let prixRestau1 = 1000000;
 let prixRestau2 = 6500000;
 
+//variables compteur de score, de secondes, des boutons et maximum des compteur
 let cptTotal=1;
 let cptSeconde=0;
 let max1=500;
@@ -56,8 +61,12 @@ let cptRestau1 = 0;
 let cptRestau2 = 0;
 
 let cptDrapeau = 0;
+
+//variables timer
 let timer=Date.now();
 
+
+//variables affichage des prix
 let spanPate=document.getElementById('spanPate');
 let spanPoulpe=document.getElementById('spanPoulpe');
 let spanSauce=document.getElementById('spanSauce');
@@ -69,6 +78,7 @@ let spanLivreur=document.getElementById('spanLivreur');
 let spanRestau1=document.getElementById('spanRestau1');
 let spanRestau2=document.getElementById('spanRestau2');
 
+//variables elements info-bulles
 let infoPate=document.getElementById('infoPate');
 let infoPoulpe=document.getElementById('infoPoulpe');
 let infoSauce=document.getElementById('infoSauce');
@@ -82,6 +92,7 @@ let infoRestau2=document.getElementById('infoRestau2');
 let saveAlert=document.getElementById('saveAlert');
 let loadAlert=document.getElementById('loadAlert');
 
+//variables element bouton
 let pate=document.getElementById('pate').firstElementChild.firstElementChild;
 let poulpe=document.getElementById('poulpe').firstElementChild.firstElementChild;
 let sauce=document.getElementById('sauce').firstElementChild.firstElementChild;
@@ -93,20 +104,24 @@ let livreur=document.getElementById('livreur').firstElementChild.firstElementChi
 let restau1=document.getElementById('restau1').firstElementChild.firstElementChild;
 let restau2=document.getElementById('restau2').firstElementChild.firstElementChild;
 
+//initialisation du background
 document.getElementById('container').parentNode.style.background='url("../Image/bg'+(cptDrapeau+1)+'.png")';
 
+//variable random
+let cpt1=(Math.round(Math.random()*(max1-1))+1);
+let cpt2=(Math.round(Math.random()*(max2-1))+1);
+let cptChoisie=Math.round(Math.random()*8);
 
-//fonction afin de désactiver le bouton entrer
+//---------------------------------------fonction afin de désactiver le bouton entrer
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    return false;
+  }
+}, true);
 
-// document.addEventListener("keydown", function(event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     return false;
-//   }
-// }, true);
 
-
-//fonction sauvegarde
+//---------------------------------------------------------------fonction sauvegarde
 function save(){
 	localStorage.setItem('score', score);
 	localStorage.setItem('prixPate', prixPate);
@@ -144,6 +159,7 @@ function save(){
 	setTimeout(stopSave,2000);
 }
 
+//---------------------------------------------function de mise a jour des variables
 function maj(){
 
 	//maj drapeau
@@ -165,8 +181,6 @@ function maj(){
 		default:
 		flag.firstElementChild.src='../Image/drapeau';
 	}
-
-
 
 	//maj compteur wasabi/soja
 	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -322,7 +336,7 @@ function maj(){
 		restau2.firstElementChild.src="../Image/desRestaurants.png";
 	}
 	
-	//Drapeau
+	//maj Drapeau
 	if (cptPate>=max1 && cptPoulpe>=max1 && cptSauce>=max1 && cptKatsuo>=max2 && cptBrochette>=max2 && cptBento>=max2 && cptKukku>=max2 && cptLivreur>=max2 && cptRestau1>=max2 && cptRestau2>=1){
 		flag.className='flag2';
 		flag.disabled='false';
@@ -331,13 +345,14 @@ function maj(){
 		flag.disabled='true';
 	}
 
-	//bg
+	//maj background
 	document.getElementById('container').parentNode.style.background='url("../Image/bg'+(cptDrapeau+1)+'.png")';
 }
 
+//---------------------------------------------------------------fonction chargement
 function load(){
 
-	//load variables
+	//chargement variables
 	score=Number(localStorage.getItem('score'));
 	prixPate=Number(localStorage.getItem('prixPate'));
 	prixPoulpe=Number(localStorage.getItem('prixPoulpe'));
@@ -377,7 +392,6 @@ function load(){
 	//maj
 	maj();
 
-
 	//alert
 	loadAlert.style.display='block';
 	function stopLoad(){
@@ -386,8 +400,7 @@ function load(){
 	setTimeout(stopLoad,2000);
 }
 
-
-//ecriture nombre k,M,mi,...
+//--------------------------------------------------------ecriture nombre k,M,mi,...
 function ecritureNb(nb){
 	if (nb>=1000000000000){
 		return((Math.round(nb/10000000000)/100)+'bi');
@@ -402,7 +415,8 @@ function ecritureNb(nb){
 	}
 }
 
-//Animation takoyaki
+//----------------------------------------------------------------Animation takoyaki
+//animation takoyaki lorsque la souris debute un clique
 takoyaki.addEventListener('mousedown', function(e){
 	let r=Math.round(Math.random()*17)+1;
 	var plus=document.getElementById('plusScore'+r);
@@ -416,6 +430,7 @@ takoyaki.addEventListener('mousedown', function(e){
 	}
 });
 
+//animation takoyaki lorque la souris fini un clique
 takoyaki.addEventListener('mouseup', function(e){
 		plusScore1.setAttribute('class','off');
 		plusScore2.setAttribute('class','off');
@@ -437,9 +452,7 @@ takoyaki.addEventListener('mouseup', function(e){
 		plusScore18.setAttribute('class','off');
 });
 
-
-// images mouvantes
-
+//----------------------------------------------------------images brillante en hover
 function pate1(x){
 	if (cptPate<max1){
 		x.src='../Image/pate2.png';
@@ -568,15 +581,14 @@ function tako2(x){
 	x.src='../Image/takoyakiCONTOUR.png';
 }
 
-
-
-// VRAI JS
-
+//-------------------------------------------------fonction du click sur le takoyaki
 function buttonClick(){
 	score=score+cptTotal; // score = score + compteur
     wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 }
 
+//--------------------------------------------------------fonctions d'incrémentation
+//bouton pate
 function incrementerPate (x) {
 	if (score>=prixPate){
 		cptPate++;
@@ -607,6 +619,7 @@ function incrementerPate (x) {
 	}
 }
 
+//bouton poulpe
 function incrementerPoulpe (x) {
 	if (score>=prixPoulpe){
 		cptPoulpe++;
@@ -637,6 +650,7 @@ function incrementerPoulpe (x) {
 	}
 }
 
+//bouton sauce
 function incrementerSauce (x) {
 	if (score>=prixSauce){
 		cptSauce++;
@@ -667,6 +681,7 @@ function incrementerSauce (x) {
 	}
 }
 
+//bouton katsuobuki
 function incrementerKatsuo (x) {
 	if (score>=prixKatsuo){
 		cptKatsuo++;
@@ -697,8 +712,9 @@ function incrementerKatsuo (x) {
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue des brochettes
 function clickBrochette(){
-	score=score+(cptBrochette*3); // score = score + compteur
+	score=score+(cptBrochette*3);
  	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 }
 
@@ -708,7 +724,7 @@ function incrementerBrochette(x){
 		cptBrochette++;
 		cptSeconde=cptSeconde+3;
 		score=score-prixBrochette;
-		prixBrochette=prixBrochette+500;
+		prixBrochette=prixBrochette+1000;
 		if (cptBrochette>1){
 			clearInterval(intervalBrochette);
 		}
@@ -736,8 +752,9 @@ function incrementerBrochette(x){
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue des bentos
 function clickBento(){
-	score=score+(cptBento*6); // score = score + compteur
+	score=score+(cptBento*6);
    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
 }
 
@@ -747,7 +764,7 @@ function incrementerBento(x){
 		cptBento++;
 		cptSeconde=cptSeconde+6;
 		score=score-prixBento;
-		prixBento=prixBento+1000;
+		prixBento=prixBento+1500;
 		if (cptBento>1){
 			clearInterval(intervalBento);
 		}
@@ -775,6 +792,7 @@ function incrementerBento(x){
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue des kukkus
 function clickKukku(){
 	score=score+(cptKukku*12); // score = score + compteur
    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -814,6 +832,7 @@ function incrementerKukku(x){
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue des livreurs
 function clickLivreur(){
 	score=score+(cptLivreur*50); // score = score + compteur
    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -853,6 +872,7 @@ function incrementerLivreur(x){
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue des isakayas
 function clickRestau1(){
 	score=score+(cptRestau1*250); // score = score + compteur
    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -892,6 +912,7 @@ function incrementerRestau1(x){
 	}
 }
 
+//fonctions d'incrémentation et d'incrémentation continue de la chaine de restaurant
 function clickRestau2(){
 	score=score+(cptRestau2*500); // score = score + compteur
    	wasabi.innerHTML='<p>'+ecritureNb(score)+'</p>';
@@ -930,6 +951,7 @@ function incrementerRestau2(x){
 	}
 }
 
+//--------------------------------------------------fonction de changement du drapeau
 function buttonFlag(){
 	if (cptPate>=max1 && cptPoulpe>=max1 && cptSauce>=max1 && cptKatsuo>=max2 && cptBrochette>=max2 && cptBento>=max2 && cptKukku>=max2 && cptLivreur>=max2 && cptRestau1>=max2 && cptRestau2>=1){
 		switch(cptDrapeau){
@@ -988,12 +1010,7 @@ if (cptPate>=max1 && cptPoulpe>=max1 && cptSauce>=max1 && cptKatsuo>=max2 && cpt
 	flag.disabled='true';
 }
 
-
-
-let cpt1=(Math.round(Math.random()*(max1-1))+1);
-let cpt2=(Math.round(Math.random()*(max2-1))+1);
-let cptChoisie=Math.round(Math.random()*8);
-
+//-------------------------------------------fonction du ramdom des vagues(evenement)
 function random(){
 	switch (cptChoisie){
 		case 0:
@@ -1061,7 +1078,3 @@ function random(){
 		break;
 	}	
 }
-
-console.log(cpt1);
-console.log(cpt2);
-console.log(cptChoisie);
