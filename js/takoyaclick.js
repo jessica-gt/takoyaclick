@@ -98,12 +98,12 @@ document.getElementById('container').parentNode.style.background='url("../Image/
 
 //fonction afin de désactiver le bouton entrer
 
-document.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    return false;
-  }
-}, true);
+// document.addEventListener("keydown", function(event) {
+//   if (event.keyCode === 13) {
+//     event.preventDefault();
+//     return false;
+//   }
+// }, true);
 
 
 //fonction sauvegarde
@@ -592,6 +592,7 @@ function incrementerPate (x) {
 			x.firstElementChild.src="../Image/pateGris.png";
 			spanPate.innerHTML='MAX';
 		}
+		random();
 	}
 	else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
@@ -621,6 +622,7 @@ function incrementerPoulpe (x) {
 			x.firstElementChild.src="../Image/poulpeGris.png";
 			spanPoulpe.innerHTML='MAX';
 		}
+		random();
 	}
 	else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
@@ -650,6 +652,7 @@ function incrementerSauce (x) {
 			x.firstElementChild.src="../Image/sauceGris.png";
 			spanSauce.innerHTML='MAX';
 		}
+		random();
 	}
 	else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
@@ -678,11 +681,8 @@ function incrementerKatsuo (x) {
 			alert('FINISH');
 			x.firstElementChild.src="../Image/boniteGris.png";
 			spanKatsuo.innerHTML='MAX';
-		}else if (cptKatsuo===50){
-			document.getElementById('tsu').style.display='block';
-			score=0;
-			maj();
 		}
+		random();
 	}
 	else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
@@ -722,6 +722,7 @@ function incrementerBrochette(x){
 			x.firstElementChild.src="../Image/brochetteGris.png";
 			spanBrochette.innerHTML='MAX';
 		}
+		random();
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}	
@@ -760,6 +761,7 @@ function incrementerBento(x){
 			x.firstElementChild.src="../Image/bentoGris.png";
 			spanBento.innerHTML='MAX';
 		}
+		random();
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}	
@@ -798,6 +800,7 @@ function incrementerKukku(x){
 			x.firstElementChild.src="../Image/kukkuGris.png";
 			spanKukku.innerHTML='MAX';
 		}
+		random();
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}	
@@ -836,6 +839,7 @@ function incrementerLivreur(x){
 			x.firstElementChild.src="../Image/livreurGris.png";
 			spanLivreur.innerHTML='MAX';
 		}
+		random();
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}	
@@ -874,6 +878,7 @@ function incrementerRestau1(x){
 			x.firstElementChild.src="../Image/restaurantGris.png";
 			spanRestau1.innerHTML='MAX';
 		}
+		random();
 	}else{
 		alert ( ' Et non ! Cuisine encore plus Petit Kukku !!! ');
 	}	
@@ -985,15 +990,78 @@ if (cptPate>=max1 && cptPoulpe>=max1 && cptSauce>=max1 && cptKatsuo>=max2 && cpt
 
 
 
-// let cpt1=(Math.random()*(max1-1))+1;
-// let cpt2=(Math.random()*(max2-1))+1;
+let cpt1=(Math.round(Math.random()*(max1-1))+1);
+let cpt2=(Math.round(Math.random()*(max2-1))+1);
+let cptChoisie=Math.round(Math.random()*8);
 
-// switch (Math.random()*9){
-// 	case 0:
-// 		if (cptKatsuo===50){
-// 			document.getElementById('tsu').style.display='block';
-// 			score=0;
-// 			maj();
-// 		}
-// 	break;
-// }
+function random(){
+	switch (cptChoisie){
+		case 0:
+			if (cptPate===cpt1){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 1:
+			if (cptPoulpe===cpt1){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 2:
+			if (cptSauce===cpt1){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 3:
+			if (cptKatsuo===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 4:
+			if (cptBrochette===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 5:
+			if (cptBento===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 6:
+			if (cptKukku===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 7:
+			if (cptLivreur===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+		case 8:
+			if (cptRestau1===cpt2){
+				document.getElementById('tsu').style.display='block';
+				score=0;
+				maj();
+			}
+		break;
+	}	
+}
+
+console.log(cpt1);
+console.log(cpt2);
+console.log(cptChoisie);
