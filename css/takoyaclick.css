@@ -1322,7 +1322,7 @@ span{
 	z-index: 9;
 	height: 90%;
 	top:10%;
-	left:-100%;
+	left:-70%;
 
 	-webkit-animation-name:tsunami-movement ;
 	-webkit-animation-timing-function: linear;
@@ -1336,7 +1336,7 @@ span{
 	z-index: 8;
 	height: 80%;
 	top:15%;
-	left:-90%;
+	left:-60%;
 
 	-webkit-animation-name: tsunami-movement;
 	-webkit-animation-timing-function: linear;
@@ -1349,7 +1349,7 @@ span{
 	z-index: 7;
 	height: 70%;
 	top:20%;
-	left:-80%;
+	left:-50%;
 
 	-webkit-animation-name: tsunami-movement;
 	-webkit-animation-timing-function: linear;
@@ -1362,7 +1362,7 @@ span{
 	z-index: 6;
 	height: 60%;
 	top:25%;
-	left:-70%;
+	left:-40%;
 
 	-webkit-animation-name: tsunami-movement;
 	-webkit-animation-timing-function: linear;
@@ -1375,7 +1375,7 @@ span{
 	z-index: 5;
 	height: 50%;
 	top:30%;
-	left:-60%;
+	left:-30%;
 
 	-webkit-animation-name: tsunami-movement;
 	-webkit-animation-timing-function: linear;
@@ -1386,13 +1386,16 @@ span{
 @-webkit-keyframes tsunami-movement {
 	99% {
     	opacity: 0;
-    	-webkit-transform: translateX(1000px);
-    	-moz-transform: translateX(1000px);
-    	transform: translateX(1000px);
+    	-webkit-transform: translateX(250%);
+    	-moz-transform: translateX(250%);
+    	transform: translateX(250%);
     	animation-iteration-count: 1;
   	}
   	100% {
-  		left:0%;
   		opacity:0;
   	}
+}
+
+#tsu{
+	display:none;
 }

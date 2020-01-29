@@ -98,12 +98,12 @@ document.getElementById('container').parentNode.style.background='url("../Image/
 
 //fonction afin de désactiver le bouton entrer
 
-// document.addEventListener("keydown", function(event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     return false;
-//   }
-// }, true);
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    return false;
+  }
+}, true);
 
 
 //fonction sauvegarde
@@ -367,7 +367,6 @@ function load(){
 	timer=Number(localStorage.getItem('timer'));
 
 	score=score+(cptSeconde*Math.round((Date.now()-timer)/1000));
-	console.log(Math.round(Date.now()-timer)/1000);
 
 
 	//effacement des intervalles avant re-création
@@ -679,6 +678,10 @@ function incrementerKatsuo (x) {
 			alert('FINISH');
 			x.firstElementChild.src="../Image/boniteGris.png";
 			spanKatsuo.innerHTML='MAX';
+		}else if (cptKatsuo===50){
+			document.getElementById('tsu').style.display='block';
+			score=0;
+			maj();
 		}
 	}
 	else{
@@ -979,3 +982,18 @@ if (cptPate>=max1 && cptPoulpe>=max1 && cptSauce>=max1 && cptKatsuo>=max2 && cpt
 	flag.className='flag1';
 	flag.disabled='true';
 }
+
+
+
+// let cpt1=(Math.random()*(max1-1))+1;
+// let cpt2=(Math.random()*(max2-1))+1;
+
+// switch (Math.random()*9){
+// 	case 0:
+// 		if (cptKatsuo===50){
+// 			document.getElementById('tsu').style.display='block';
+// 			score=0;
+// 			maj();
+// 		}
+// 	break;
+// }
